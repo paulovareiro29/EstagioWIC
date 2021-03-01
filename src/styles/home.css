@@ -1,10 +1,11 @@
 /*  HOMEPAGE
-        1 - Landing div
+        1 - Header (landing)
             1.1 - Sidebar
             1.2 - Main Content
                 1.2.1 - Header
                 1.2.2 - Content
                 1.2.3 - Footer
+        2 - 
 */
 
 /* INDEX 1 */
@@ -20,7 +21,7 @@
   max-width: 80px;
 }
 
-#landing > .sidebar .content {
+#landing > .sidebar > .content {
   min-height: 780px;
   max-height: 780px;
 
@@ -30,25 +31,25 @@
   align-items: center;
 }
 
-#landing > .sidebar .content img {
+#landing > .sidebar > .content img {
   cursor: pointer;
 }
 
-#landing > .sidebar .content .menu {
+#landing > .sidebar > .content .menu {
   margin-top: 72px;
 }
 
-#landing > .sidebar .content .social {
+#landing > .sidebar > .content .social {
   display: flex;
   flex-direction: column;
   padding: 35px 0px;
 }
 
-#landing > .sidebar .content .social img {
+#landing > .sidebar > .content .social img {
   margin-top: 30px;
 }
 
-#landing > .sidebar .slide-counter {
+#landing > .sidebar > .slide-counter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,10 +66,15 @@
 /* INDEX 1.2*/
 #landing > .main {
   position: relative;
-  background: url("../images/home/landing.svg");
 }
 
-#landing > .main .overlay {
+#landing > .main > .background {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#landing > .main > .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -78,29 +84,32 @@
 
   background: #181818;
   mix-blend-mode: multiply;
-  opacity: 0.75;
+  opacity: 0.6;
 }
 
 #landing > .main .wrapper {
   position: relative;
   z-index: 2;
-  margin-left: 109px;
 }
 
 /* INDEX 1.2.1*/
-#landing > .main .wrapper .header {
+#landing > .main .wrapper > .header {
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
   height: 108px;
   border-bottom: 0.5px solid #e1e1e1;
+
+  max-width: 1251px;
+
+  margin-left: 109px;
 }
 
-#landing > .main .wrapper .header .logo{
-    margin-right: 188px;
+#landing > .main .wrapper > .header .logo {
+  margin-right: 188px;
 }
 
-#landing > .main .wrapper .header .nav {
+#landing > .main .wrapper > .header .nav {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -114,7 +123,7 @@
   color: white;
 }
 
-#landing > .main .wrapper .header .nav ul {
+#landing > .main .wrapper > .header .nav ul {
   display: flex;
   align-items: center;
   margin-top: 7px;
@@ -123,48 +132,49 @@
   padding: 0px;
 }
 
-#landing > .main .wrapper .header .nav ul li {
+#landing > .main .wrapper > .header .nav ul li {
   cursor: pointer;
   margin-left: 56px;
 }
 
-#landing > .main .wrapper .header .nav ul > :first-child {
-    margin-left: 0px;
+#landing > .main .wrapper > .header .nav ul > :first-child {
+  margin-left: 0px;
 }
 
-#landing > .main .wrapper .header .nav ul > :last-child {
+#landing > .main .wrapper > .header .nav ul > :last-child {
   margin-left: 32px;
   background-color: #eb0029;
   padding: 6px 28.5px 5px 28.5px;
   border-radius: 32px;
 }
 
-#landing > .main .wrapper .header .nav .search {
+#landing > .main .wrapper > .header .nav .search {
   margin-right: 87px;
   margin-left: 67px;
 }
 
 /* INDEX 1.2.2 */
-#landing > .main .wrapper .content {
+#landing > .main .wrapper > .content {
   margin-top: 147px;
+  margin-left: 109px;
   display: flex;
 }
 
-#landing > .main .wrapper .content .left {
+#landing > .main .wrapper > .content > .left {
   min-width: 613px;
   max-width: 613px;
 
   color: white;
 }
 
-#landing > .main .wrapper .content .left > h1 {
+#landing > .main .wrapper > .content > .left h1 {
   margin: 0px;
   font-weight: 900;
   font-size: 56px;
   line-height: 64px;
 }
 
-#landing > .main .wrapper .content .left > h4 {
+#landing > .main .wrapper > .content > .left h4 {
   margin-top: 24px;
   min-width: 438px;
   max-width: 438px;
@@ -173,8 +183,106 @@
   line-height: 40px;
 }
 
-#landing > .main .wrapper .content .right {
+#landing > .main .wrapper > .content > .right {
   display: flex;
   align-items: center;
   margin-left: 156px;
+  padding-bottom: 100px;
+}
+
+/* INDEX 1.2.3 */
+#landing > .main .wrapper > .footer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 85px;
+  min-height: 120px;
+  max-height: 120px;
+}
+
+#landing > .main .wrapper > .footer .slider {
+  display: flex;
+  flex-direction: row;
+}
+
+#landing > .main .wrapper > .footer .slider > .left,
+#landing > .main .wrapper > .footer .slider > .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eb0029;
+}
+
+#landing > .main .wrapper > .footer .slider > .left {
+  padding: 0px 37px 0px 37px;
+}
+
+#landing > .main .wrapper > .footer .slider > .right {
+  padding: 0px 38px 0px 0px;
+}
+
+#landing > .main .wrapper > .footer .slide-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  color: white;
+}
+
+#landing > .main .wrapper > .footer .slide-wrapper > .slide {
+  display: flex;
+  align-items: center;
+  background: #181818;
+  height: 100%;
+  padding: 0px 0px 0px 38px;
+}
+
+#landing > .main .wrapper > .footer .slide-wrapper > .slide .content {
+  display: flex;
+  flex-direction: column;
+}
+
+#landing > .main .wrapper > .footer .slide-wrapper > .slide .content span {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.125em;
+}
+
+#landing > .main .wrapper > .footer .slide-wrapper > .slide .content h6 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#landing > .main .wrapper > .footer .slide-wrapper > .slide .arrow {
+  display: flex;
+  justify-content: center;
+  display: center;
+
+  padding: 18px;
+}
+
+#landing > .main .wrapper > .footer .slide-wrapper > .slide.hidden {
+  display: none;
+}
+
+#landing
+  > .main
+  .wrapper
+  > .footer
+  .slide-wrapper
+  > .slide.partial-hidden
+  .arrow {
+  display: none;
+}
+
+#landing > .main .wrapper > .footer .slide-wrapper > .slide.partial-hidden {
+  padding: 0px 8px 0px 8px;
+}
+
+#landing > .main .wrapper > .footer .slide-wrapper > .slide.partial-hidden span,
+#landing > .main .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
+  filter: blur(1.5px) opacity(50%);
 }
