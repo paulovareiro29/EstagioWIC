@@ -1,0 +1,46 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    height: 108px;
+    border-bottom: 0.5px solid #E1E1E1;
+}
+
+.header .nav{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 22px;
+
+    text-transform: uppercase;
+    color: white;
+}
+
+.header .nav ul{
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+    margin-bottom: 0px;
+    list-style-type: none;
+}
+
+.header .nav ul li {
+    cursor: pointer;
+    margin-left: 56px;
+}
+
+.header .nav ul > :last-child{
+    margin-left: 32px;
+    background-color: #EB0029;
+    padding: 6px 28.5px 5px 28.5px;
+    border-radius: 32px;
+}
+
+.header .nav .search{
+    margin-right: 87px;
+    margin-left: 67px;
+}
