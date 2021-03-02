@@ -1,44 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- font -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <!-- -->
 
     <link rel="stylesheet" href="src/styles/global.css">
     <link rel="stylesheet" href="src/styles/home.css">
+
+
     <title>Home</title>
 </head>
+
 <body>
     <header>
         <div id="landing">
-            <div class="sidebar">
-                <div class="content">
-                    <div class="menu">
-                        <img src="src/images/icons/menu.svg">
-                    </div>
-                    <div class="social">
-                        <img src="src/images/icons/facebook.svg">
-                        <img src="src/images/icons/instagram.svg">
-                        <img src="src/images/icons/twitter.svg">
+            <!-- SIDEBAR -->
+            <div id="sidebar" class="sidebar closed">
+                <div id="sidebar-content" class="content">
+                    <div class="wrapper">
+                        <div class="header">
+                            <div class="logo">
+                                <img src="src/images/logo_white.svg" />
+                            </div>
+                            <div class="search">
+                                <img src="src/images/search.svg">
+                            </div>
+                        </div>
+                        <div class="body">
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="#">Início</a></li>
+                                    <li class="dropdown">
+                                        <a href="#">Soluções</a>
+                                        <div class="dropdown-content">
+                                            <a href="#">Corporate</a>
+                                            <a href="#">Advanced</a>
+                                            <a href="#">Enterprise</a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#">Tutoriais</a>
+                                        <div class="dropdown-content">
+                                            <a href="#">Tutorial 1</a>
+                                            <a href="#">Tutorial 2</a>
+                                            <a href="#">Tutorial 3</a>
+                                        </div>
+                                    </li>
+                                    <li><a href="#">Contactos</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <ul>
+                                <li><a href="#">Sobre nós</a></li>
+                                <li><a href="#">Termos e condições</a></li>
+                                <li><a href="#">Política de cookies</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="slide-counter">
-                    <span>1 / 8</span>
+                <div class="bar">
+                    <div class="buttons">
+                        <div class="menu">
+                            <img id="sidebar-menu-closed" src="src/images/icons/menu.svg">
+                            <img id="sidebar-menu-open" src="src/images/icons/x.svg">
+                        </div>
+                        <div class="social closed">
+                            <img class="facebook" src="src/images/icons/facebook.svg">
+                            <img class="instagram" src="src/images/icons/instagram.svg">
+                            <img class="twitter" src="src/images/icons/twitter.svg">
+                        </div>
+                        <div class="social open">
+                            <img class="facebook" src="src/images/icons/facebook_white.svg">
+                            <img class="instagram" src="src/images/icons/instagram_white.svg">
+                            <img class="twitter" src="src/images/icons/twitter_white.svg">
+                        </div>
+                    </div>
+
+                    <div class="slide-counter">
+                        <span>1 / 8</span>
+                    </div>
                 </div>
             </div>
+            <!-- END SIDEBAR -->
+
             <div class="main">
                 <div class="background">
                     <img src="src/images/home/landing.svg">
-                </div>   
+                </div>
                 <div class="overlay"></div>
                 <div class="wrapper">
                     <div class="header">
                         <div class="logo">
-                            <img src="src/images/logo_white.svg"/>
+                            <img src="src/images/logo_white.svg" />
                         </div>
                         <div class="nav">
                             <ul>
@@ -48,9 +112,9 @@
                                 <li>Contactos</li>
                                 <li>Demonstração</li>
                             </ul>
-                
+
                             <div class="search">
-                                <img src="src/images/search.svg" >
+                                <img src="src/images/search.svg">
                             </div>
                         </div>
                     </div>
@@ -66,13 +130,13 @@
                     <div class="footer">
                         <div class="slider">
                             <div class="left">
-                                <img src="src/images/icons/arrow_left.svg" alt="">
+                                <img src="src/images/icons/arrows/40_arrow_left.svg" alt="">
                             </div>
                             <div class="right">
-                                <img src="src/images/icons/arrow_right.svg" alt="">
+                                <img src="src/images/icons/arrows/40_arrow_right.svg" alt="">
                             </div>
                         </div>
-    
+
                         <div class="slide-wrapper">
                             <div class="slide">
                                 <div class="content">
@@ -80,66 +144,57 @@
                                     <h6>PHC Advanced</h6>
                                 </div>
                                 <div class="arrow">
-                                    <img src="src/images/icons/small_arrow_right.svg" alt="">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
                                 </div>
                             </div>
-    
+
                             <div class="slide">
                                 <div class="content">
                                     <span>Tutorial</span>
                                     <h6>Criar consumidor</h6>
                                 </div>
                                 <div class="arrow">
-                                    <img src="src/images/icons/small_arrow_right.svg" alt="">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
                                 </div>
                             </div>
-    
+
                             <div class="slide">
                                 <div class="content">
                                     <span>Blog</span>
                                     <h6>Especificações PHC</h6>
                                 </div>
                                 <div class="arrow">
-                                    <img src="src/images/icons/small_arrow_right.svg" alt="">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
                                 </div>
                             </div>
-    
+
                             <div class="slide partial-hidden">
                                 <div class="content">
                                     <span>Blog</span>
                                     <h6>Especificações PHC</h6>
                                 </div>
                                 <div class="arrow">
-                                    <img src="src/images/icons/small_arrow_right.svg" alt="">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
                                 </div>
                             </div>
-    
+
                             <div class="slide hidden">
                                 <div class="content">
                                     <span>Blog</span>
                                     <h6>Especificações PHC</h6>
                                 </div>
                                 <div class="arrow">
-                                    <img src="src/images/icons/small_arrow_right.svg" alt="">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
                                 </div>
                             </div>
-    
+
                             <div class="slide hidden">
                                 <div class="content">
                                     <span>Blog</span>
                                     <h6>Especificações PHC</h6>
                                 </div>
                                 <div class="arrow">
-                                    <img src="src/images/icons/small_arrow_right.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="slide hidden">
-                                <div class="content">
-                                    <span>Blog</span>
-                                    <h6>Especificações PHC</h6>
-                                </div>
-                                <div class="arrow">
-                                    <img src="src/images/icons/small_arrow_right.svg" alt="">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
                                 </div>
                             </div>
                             <div class="slide hidden">
@@ -148,24 +203,100 @@
                                     <h6>Especificações PHC</h6>
                                 </div>
                                 <div class="arrow">
-                                    <img src="src/images/icons/small_arrow_right.svg" alt="">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="slide hidden">
+                                <div class="content">
+                                    <span>Blog</span>
+                                    <h6>Especificações PHC</h6>
+                                </div>
+                                <div class="arrow">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
-            
+
         </div>
     </header>
     <main>
+        <div id="solutions-area" class="showing">
+            <div class="solutions">
+                <!-- Solutions go in here-->
+                <div class="solution enterprise">
+                    <div class="wrapper">
+                        <div class="logo">
+                            <img src="src/images/logo_advanced.svg" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="icon">
+                                <img src="src/images/icons/enterprise.svg" alt="">
+                            </div>
+                            <h5>PHC<br> Enterprise </h5>
+                        </div>
+                    </div>
 
+                </div>
+
+                <div class="solution advanced">
+                    <div class="wrapper">
+                        <div class="logo">
+                            <img src="src/images/logo_advanced.svg" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="icon">
+                                <img src="src/images/icons/advanced.svg" alt="">
+                            </div>
+                            <h5>PHC<br> Advanced</h5>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="solution corporate">
+                    <div class="wrapper">
+                        <div class="logo">
+                            <img src="src/images/logo_corporate.svg" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="icon">
+                                <img src="src/images/icons/corporate.svg" alt="">
+                            </div>
+                            <h5>PHC<br> Corporate</h5>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="slider">
+                    <div class="left">
+                        <img src="src/images/icons/arrows/32_arrow_left.svg">
+                    </div>
+                    <div class="right">
+                        <img src="src/images/icons/arrows/32_arrow_right.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <span>Soluções</span>
+                <h2>Soluções pensadas no seu negócio.</h2>
+                <h5>Temos soluções desde a pequena empresa até a média/grande empresa.</h5>
+                <button class="find-more">Descubra mais</button>
+            </div>
+        </div>
     </main>
     <footer>
 
     </footer>
-    
 
+    <script src="script.js"></script>
 </body>
+
 </html>
