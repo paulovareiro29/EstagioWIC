@@ -72,18 +72,18 @@
                 <div class="bar">
                     <div class="buttons">
                         <div class="menu">
-                            <img id="sidebar-menu-closed" src="src/images/icons/menu.svg">
-                            <img id="sidebar-menu-open" src="src/images/icons/x.svg">
+                            <img id="sidebar-menu-open" src="src/images/icons/menu.svg">
+                            <img id="sidebar-menu-close" src="src/images/icons/x.svg">
                         </div>
                         <div class="social closed">
-                            <img class="facebook" src="src/images/icons/facebook.svg">
-                            <img class="instagram" src="src/images/icons/instagram.svg">
-                            <img class="twitter" src="src/images/icons/twitter.svg">
+                            <img class="facebook" src="src/images/icons/socials/facebook.svg">
+                            <img class="instagram" src="src/images/icons/socials/instagram.svg">
+                            <img class="twitter" src="src/images/icons/socials/twitter.svg">
                         </div>
                         <div class="social open">
-                            <img class="facebook" src="src/images/icons/facebook_white.svg">
-                            <img class="instagram" src="src/images/icons/instagram_white.svg">
-                            <img class="twitter" src="src/images/icons/twitter_white.svg">
+                            <img class="facebook" src="src/images/icons/socials/facebook_white.svg">
+                            <img class="instagram" src="src/images/icons/socials/instagram_white.svg">
+                            <img class="twitter" src="src/images/icons/socials/twitter_white.svg">
                         </div>
                     </div>
 
@@ -224,72 +224,85 @@
         </div>
     </header>
     <main>
-        <div id="solutions-area" class="showing">
-            <div class="solutions">
-                <!-- Solutions go in here-->
-                <div class="solution enterprise">
-                    <div class="wrapper">
-                        <div class="logo">
-                            <img src="src/images/logo_advanced.svg" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="icon">
-                                <img src="src/images/icons/enterprise.svg" alt="">
+        <div id="solutions-area" class="">
+            <div class="wrapper">
+                <div id="solutions" class="solutions">
+                    <!-- Solutions go in here-->
+                    <div class="solution enterprise">
+                        <div class="wrapper">
+                            <div class="logo">
+                                <img src="src/images/logo_advanced.svg" alt="">
                             </div>
-                            <h5>PHC<br> Enterprise </h5>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="solution advanced">
-                    <div class="wrapper">
-                        <div class="logo">
-                            <img src="src/images/logo_advanced.svg" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="icon">
-                                <img src="src/images/icons/advanced.svg" alt="">
+                            <div class="content">
+                                <div class="icon">
+                                    <img src="src/images/icons/enterprise.svg" alt="">
+                                </div>
+                                <h5>PHC<br> Enterprise </h5>
                             </div>
-                            <h5>PHC<br> Advanced</h5>
+                        </div>
+                        <div id="info" class="info">
+                            <h6>DESENVOLVIDO AUMENTAR A<br> CAPACIDADE DAS PEQUENAS E<br> MÉDIAS EMPRESAS.</h6>
                         </div>
                     </div>
 
-                </div>
-
-
-
-                <div class="solution corporate">
-                    <div class="wrapper">
-                        <div class="logo">
-                            <img src="src/images/logo_corporate.svg" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="icon">
-                                <img src="src/images/icons/corporate.svg" alt="">
+                    <div class="solution advanced">
+                        <div class="wrapper">
+                            <div class="logo">
+                                <img src="src/images/logo_advanced.svg" alt="">
                             </div>
-                            <h5>PHC<br> Corporate</h5>
+                            <div class="content">
+                                <div class="icon">
+                                    <img src="src/images/icons/advanced.svg" alt="">
+                                </div>
+                                <h5>PHC<br> Advanced</h5>
+                            </div>
+                        </div>
+                        <div id="info" class="info">
+                            <h6>DESENVOLVIDO AUMENTAR A<br> CAPACIDADE DAS PEQUENAS E<br> MÉDIAS EMPRESAS.</h6>
                         </div>
                     </div>
 
 
-                </div>
 
-                <div class="slider">
-                    <div class="left">
-                        <img src="src/images/icons/arrows/32_arrow_left.svg">
+                    <div class="solution corporate">
+                        <div class="wrapper">
+                            <div class="logo">
+                                <img src="src/images/logo_corporate.svg" alt="">
+                            </div>
+                            <div class="content">
+                                <div class="icon">
+                                    <img src="src/images/icons/corporate.svg" alt="">
+                                </div>
+                                <h5>PHC<br> Corporate</h5>
+                            </div>
+                        </div>
+                        <div id="info" class="info">
+                            <h6>DESENVOLVIDO PARA<br> MICROEMPRESAS QUE QUEIRAM<br> AUMENTAR A SUA PRODUTIVIDADE</h6>
+                        </div>
+
                     </div>
-                    <div class="right">
-                        <img src="src/images/icons/arrows/32_arrow_right.svg">
+
+                    <div class="slider">
+                        <div id="solutions-area-close" class="left">
+                            <img src="src/images/icons/arrows/40_arrow_left.svg">
+                        </div>
+                        <div id="solutions-area-open" class="right">
+                            <img src="src/images/icons/arrows/40_arrow_right.svg">
+                        </div>
                     </div>
+                </div>
+                <div class="content">
+                    <span>Soluções</span>
+                    <h2>Soluções pensadas no seu negócio.</h2>
+                    <h5>Temos soluções desde a pequena empresa até a média/grande empresa.</h5>
+                    <a href="#" class="show-more">Descubra mais</a>
                 </div>
             </div>
-            <div class="content">
-                <span>Soluções</span>
-                <h2>Soluções pensadas no seu negócio.</h2>
-                <h5>Temos soluções desde a pequena empresa até a média/grande empresa.</h5>
-                <button class="find-more">Descubra mais</button>
+
+            <div class="show-more">
+                <a href="#">Saber mais</a>
             </div>
+
         </div>
     </main>
     <footer>
