@@ -8,6 +8,10 @@
               1.2.3 - Footer
         2 - Solutions area
           2.1 - Solutions area showing
+          2.2 - Animations
+        3 - Contact Us
+          3.1 - Background
+          3.2 - Content
 */
 
 /* INDEX 1 */
@@ -632,7 +636,7 @@
 }
 
 #solutions-area > .show-more {
-  margin-top: 40px;
+  padding-top: 0px;
   height: 0;
   overflow: hidden;
   width: 100%;
@@ -642,9 +646,7 @@
   justify-content: center;
   align-items: center;
 
-  transition: transform 1s ease, height 1s ease;
-
-
+  transition: transform 1s ease, height 1s ease, padding-top 0.5s ease;
 }
 
 #solutions-area > .show-more > a {
@@ -667,8 +669,9 @@
 
   text-align: center;
 
-
   color: #ffffff;
+
+  text-transform: uppercase;
 }
 
 #solutions-area > .wrapper {
@@ -891,9 +894,9 @@
 }
 
 #solutions-area.showing > .show-more {
+  padding-top: 40px;
   height: 62px;
   transform: translateX(0);
-
 }
 
 #solutions-area.showing > .wrapper > .solutions {
@@ -901,7 +904,7 @@
   flex-direction: row;
 
   width: calc(100vw - 160px - 16px); /*100vw - margens - scrollbar*/
-  max-width: calc(100vw  - 160px - 16px);
+  max-width: calc(100vw - 160px - 16px);
   transition: 1s ease;
 }
 
@@ -956,7 +959,8 @@
   height: 136px;
 }
 
-/*ANIMATIONS*/
+/* INDEX 2.2 */
+/*ANIMATIONS SLIDES*/
 @keyframes solution-area-slider-slide-out {
   0% {
     right: 0px;
@@ -1007,3 +1011,118 @@
     right: 70px;
   }
 }
+
+/* INDEX 3 */
+#contact-us {
+  position: relative;
+  min-height: 480px;
+  max-height: 480px;
+
+  overflow: hidden;
+}
+
+/* INDEX 3.1 */
+/* BACKGROUND */
+#contact-us > .background {
+  position: relative;
+  max-height: 480px;
+}
+
+#contact-us > .background img {
+  width: 100%;
+  min-width: 1440px;
+}
+
+#contact-us > .background .blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 16%;
+  overflow: hidden;
+}
+
+#contact-us > .background .blur img {
+  width: 100vw;
+  filter: blur(7px);
+}
+
+#contact-us > .background .blur .white-overlay {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: calc(100% - 32px);
+  height: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  border-right: 32px solid #eb0029;
+
+  z-index: 2;
+}
+
+/* INDEX 3.2 */
+/* CONTENT */
+#contact-us > .dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(24, 24, 24, 0.75);
+  mix-blend-mode: multiply;
+}
+
+#contact-us > .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 3;
+}
+
+#contact-us > .content h3 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 48px;
+
+  text-align: center;
+
+  width: 50%;
+
+  color: #ffffff;
+
+  margin-bottom: 40px;
+}
+
+#contact-us > .content a {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+
+  text-align: center;
+
+  color: #ffffff;
+  text-transform: uppercase;
+
+  padding: 18px 54px;
+
+  background: #eb0029;
+  border-radius: 56px;
+}
+
+
