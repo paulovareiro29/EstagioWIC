@@ -20,7 +20,8 @@ footer {
 
 footer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 a {
@@ -48,7 +49,8 @@ h6 {
   display: flex;
 
   min-height: 480px;
-  min-width: 296px;
+  height: 100%;
+  min-width: 288px;
 
   overflow: hidden;
 
@@ -301,13 +303,15 @@ form > .form-row > :not(:first-child) {
   -moz-appearance: textfield;
 }
 
-.input-group > select ~ img {
-  transform: translateY(-50%) rotate(-90deg);
+/* .input-group > select ~ img {
+  transform: rotate(-90deg);
   transition: transform 0.2s;
-}
+} */
 
-.input-group > .input:not(:placeholder-shown) + label,
-.input-group > .input:focus + label,
+.input-group > input:not(:placeholder-shown) + label,
+.input-group > input:focus + label,
+.input-group > textarea:not(:placeholder-shown) + label,
+.input-group > textarea:focus + label,
 .input-group > select:focus + label,
 .input-group > select:not([value=""]):valid + label {
   top: 0;
@@ -322,10 +326,11 @@ form > .form-row > :not(:first-child) {
   color: #6c6c6c;
 }
 
+/* 
 .input-group > select:focus ~ img,
 .input-group > select:not([value=""]):valid ~ img {
-  transform: translateY(-50%) rotate(0deg);
-}
+  transform: rotate(0deg);
+} */
 
 /* REMOVE EXPAND ARROW*/
 .input-group > select {
@@ -407,7 +412,7 @@ form > .form-row > :not(:first-child) {
 }
 
 /* FOOTER CONTENT */
-.contact-us-form {
+footer > .contact-us-form {
   margin: 80px;
 
   display: flex;
@@ -415,11 +420,11 @@ form > .form-row > :not(:first-child) {
   justify-content: center;
 }
 
-.contact-us-form > .content {
+footer > .contact-us-form > .content {
   width: 515px;
 }
 
-.contact-us-form > .content span {
+footer > .contact-us-form > .content span {
   font-family: Nunito;
   font-style: normal;
   font-weight: normal;
@@ -431,7 +436,7 @@ form > .form-row > :not(:first-child) {
   color: #181818;
 }
 
-.contact-us-form > .content h2 {
+footer > .contact-us-form > .content h2 {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 800;
@@ -441,7 +446,7 @@ form > .form-row > :not(:first-child) {
   color: #eb0029;
 }
 
-.contact-us-form > .content h5 {
+footer > .contact-us-form > .content h5 {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: bold;
@@ -451,12 +456,12 @@ form > .form-row > :not(:first-child) {
   color: #181818;
 }
 
-.contact-us-form > form {
+footer > .contact-us-form > form {
   width: 624px;
   margin-top: 56px;
 }
 
-.contact-us-form > form .submit {
+footer > .contact-us-form > form .submit {
   cursor: pointer;
 
   display: flex;
@@ -481,4 +486,57 @@ form > .form-row > :not(:first-child) {
   text-align: center;
 
   color: #ffffff;
+}
+
+footer > .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 120px;
+  width: 100%;
+
+  padding: 0px 80px;
+
+  box-sizing: border-box;
+
+  background: #181818;
+
+}
+
+footer > .footer .info {
+  display: flex;
+}
+
+footer > .footer .info > :not(:first-child) {
+  margin-left: 42px;
+}
+
+footer > .footer .info section {
+  display: flex;
+  align-items: center;
+}
+
+footer > .footer .info section > :not(:first-child) {
+  margin-left: 16px;
+}
+
+footer > .footer .info section h6{
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #ffffff;
+}
+
+footer > .footer .social,
+footer > .footer .social a{
+  display: flex;
+  align-items: center;
+}
+
+footer > .footer .social >:not(:first-child){
+  margin-left: 18px;
 }

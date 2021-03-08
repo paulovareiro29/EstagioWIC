@@ -88,15 +88,47 @@
                     </div>
 
                     <div class="slide-counter">
-                        <span>1 / 8</span>
+                        <span id="slide-counter">1 / 8</span>
                     </div>
                 </div>
             </div>
             <!-- END SIDEBAR -->
 
             <div class="main">
-                <div class="background">
-                    <img src="src/images/home/landing.svg">
+
+                <div id="landing-carrossel" class="background">
+                    <div class="video showing">
+                        <img src="src/images/home/landing.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing2.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing2.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing2.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing2.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
                 </div>
                 <div class="overlay"></div>
                 <div class="wrapper">
@@ -124,15 +156,15 @@
                             <h4>Temos a experiência de <br> 10 anos a implementar software.</h4>
                         </div>
                         <div class="right">
-                            <img src="src/images/icons/play/120_play.svg">
+                            <img id="landing-play-btn" src="src/images/icons/play/120_play.svg">
                         </div>
                     </div>
                     <div class="footer">
                         <div class="slider">
-                            <div class="left">
+                            <div id="landing-carrossel-slide-left" class="left">
                                 <img src="src/images/icons/arrows/40_arrow_left.svg" alt="">
                             </div>
-                            <div class="right">
+                            <div id="landing-carrossel-slide-right" class="right">
                                 <img src="src/images/icons/arrows/40_arrow_right.svg" alt="">
                             </div>
                         </div>
@@ -169,44 +201,6 @@
                             </div>
 
                             <div class="slide partial-hidden">
-                                <div class="content">
-                                    <span>Blog</span>
-                                    <h6>Especificações PHC</h6>
-                                </div>
-                                <div class="arrow">
-                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="slide hidden">
-                                <div class="content">
-                                    <span>Blog</span>
-                                    <h6>Especificações PHC</h6>
-                                </div>
-                                <div class="arrow">
-                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="slide hidden">
-                                <div class="content">
-                                    <span>Blog</span>
-                                    <h6>Especificações PHC</h6>
-                                </div>
-                                <div class="arrow">
-                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="slide hidden">
-                                <div class="content">
-                                    <span>Blog</span>
-                                    <h6>Especificações PHC</h6>
-                                </div>
-                                <div class="arrow">
-                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="slide hidden">
                                 <div class="content">
                                     <span>Blog</span>
                                     <h6>Especificações PHC</h6>
@@ -327,7 +321,7 @@
                                 <option value="e">e</option>
                             </select>
                             <label for="">ORDENAR POR</label>
-                            <img src="src/images/icons/inputs/select.svg" alt="">
+                            <img src="src/images/icons/select.svg" alt="">
                         </div>
 
                         <div class="input-group">
@@ -336,10 +330,10 @@
                                 <option value="e">e</option>
                             </select>
                             <label for="">FILTRAR POR</label>
-                            <img src="src/images/icons/inputs/select.svg" alt="">
+                            <img src="src/images/icons/select.svg" alt="">
                         </div>
 
-                        <button type="submit"><img src="src/images/icons/inputs/filter.svg" alt=""></button>
+                        <button type="submit"><img src="src/images/icons/filter.svg" alt=""></button>
                     </div>
 
                 </form>
@@ -727,26 +721,26 @@
                     <div class="input-group">
                         <input class="input" placeholder=" " type="text">
                         <label for="">Nome</label>
-                        <img src="src/images/icons/inputs/name.svg" alt="">
+                        <img src="src/images/icons/name.svg" alt="">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="input-group">
                         <input class="input" placeholder=" " type="email">
                         <label for="">E-mail</label>
-                        <img src="src/images/icons/inputs/email.svg" alt="">
+                        <img src="src/images/icons/email.svg" alt="">
                     </div>
                     <div class="input-group">
                         <input class="input" placeholder=" " type="number">
                         <label for="">Telefone</label>
-                        <img src="src/images/icons/inputs/phone.svg" alt="">
+                        <img src="src/images/icons/phone.svg" alt="">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="input-group">
                         <textarea class="input" placeholder=" " name="" id=""></textarea>
                         <label for="">Mensagem</label>
-                        <img src="src/images/icons/inputs/message.svg" alt="">
+                        <img src="src/images/icons/message.svg" alt="">
                     </div>
                 </div>
                 <div class="form-row">
@@ -754,6 +748,36 @@
                 </div>
 
             </form>
+        </div>
+
+        <div class="footer">
+            <img class="logo" src="src/images/logo_black_white.svg" />
+            <div class="info">
+
+                <section>
+                    <img src="src/images/icons/house.svg" />
+                    <h6>
+                        Rua Prior do Crato nº1B, 4900-500 <br />
+                        Viana do Castelo, Portugal
+                    </h6>
+                </section>
+
+                <section>
+                    <img src="src/images/icons/phone.svg" />
+                    <h6>+351 258 000 000</h6>
+                </section>
+
+                <section>
+                    <img src="src/images/icons/email.svg" />
+                    <h6>parceiro@phc.pt</h6>
+                </section>
+
+            </div>
+            <div class="social">
+                <a href="#"><img src="src/images/icons/socials/facebook_red.svg" /></a>
+                <a href="#"><img src="src/images/icons/socials/instagram_red.svg" /></a>
+                <a href="#"><img src="src/images/icons/socials/twitter_red.svg" /></a>
+            </div>
         </div>
     </footer>
 

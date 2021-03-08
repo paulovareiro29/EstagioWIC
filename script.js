@@ -1,20 +1,69 @@
-function loadHome() {
-  //sidebar
-  document.getElementById("sidebar-menu-open").addEventListener("click", () => {
-    let sidebar = document.getElementById("sidebar");
+loadSidebar();
+loadSelects();
 
-    sidebar.classList.add("open");
-    sidebar.classList.remove("closed");
-  });
+function loadHome() {
+  let slide_counter = document.getElementById("landing-carrossel")
+    .childElementCount;
+  let pos = 0;
+  let background_list = document.getElementById("landing-carrossel").children;
+
+  function updateSlideCounter(direction = true) {
+    //true = right
+    //false = left
+    if (direction) {
+      pos++;
+      if (pos >= slide_counter) {
+        pos = 0;
+      }
+    } else {
+      pos--;
+      if (pos < 0) {
+        pos = slide_counter - 1;
+      }
+    }
+
+    for (let i = 0; i < background_list.length; i++) {
+      background_list[i].classList.remove("showing");
+
+      background_list[i].classList.remove("playing");
+      background_list[i].querySelector("video").pause();
+      background_list[i].querySelector("video").currentTime = 0;
+
+      if (i == pos) {
+        background_list[i].classList.add("showing");
+      }
+    }
+
+    document.getElementById("slide-counter").innerHTML = `${pos + 1} / ${
+      background_list.length
+    }`;
+
+    console.log(pos);
+  }
+
+  //carrossel
+  document
+    .getElementById("landing-carrossel-slide-left")
+    .addEventListener("click", () => {
+      updateSlideCounter(false);
+    });
 
   document
-    .getElementById("sidebar-menu-close")
+    .getElementById("landing-carrossel-slide-right")
     .addEventListener("click", () => {
-      let sidebar = document.getElementById("sidebar");
-
-      sidebar.classList.remove("open");
-      sidebar.classList.add("closed");
+      updateSlideCounter(true);
     });
+
+  //landing play button
+  document.getElementById("landing-play-btn").addEventListener("click", () => {
+    if (background_list[pos].classList.contains("playing")) {
+      background_list[pos].classList.remove("playing");
+      background_list[pos].querySelector("video").pause();
+    } else {
+      background_list[pos].classList.add("playing");
+      background_list[pos].querySelector("video").play();
+    }
+  });
 
   //solutions area
   document
@@ -154,16 +203,31 @@ function loadHome() {
       }
     });
   }
-
-
-  
 }
 
+function loadSidebar() {
+  document.getElementById("sidebar-menu-open").addEventListener("click", () => {
+    let sidebar = document.getElementById("sidebar");
 
+    sidebar.classList.add("open");
+    sidebar.classList.remove("closed");
+  });
 
-//selects
-for(let select of document.querySelectorAll("select.input")){
-  select.addEventListener("click", () => {
-    select.setAttribute('value', select.value);
-  })
+  document
+    .getElementById("sidebar-menu-close")
+    .addEventListener("click", () => {
+      let sidebar = document.getElementById("sidebar");
+
+      sidebar.classList.remove("open");
+      sidebar.classList.add("closed");
+    });
+}
+
+function loadSelects() {
+  //selects
+  for (let select of document.querySelectorAll("select.input")) {
+    select.addEventListener("click", () => {
+      select.setAttribute("value", select.value);
+    });
+  }
 }
