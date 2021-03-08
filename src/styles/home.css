@@ -1161,14 +1161,6 @@
   border: none;
 }
 
-#tutorials-area > .options .filter > :first-child {
-  margin-left: 0px;
-}
-
-#tutorials-area > .options .filter > * {
-  margin-left: 32px;
-}
-
 #tutorials-area > .options .search {
   width: 48px;
   margin-left: 16px;
@@ -1492,3 +1484,5 @@
     top: calc(100% - 80px);
   }
 }
+
+

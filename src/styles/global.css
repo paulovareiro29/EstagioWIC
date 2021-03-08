@@ -15,6 +15,12 @@ body {
 header,
 main,
 footer {
+  background: white;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
 }
 
 a {
@@ -34,8 +40,6 @@ h5,
 h6 {
   margin: 0;
 }
-
-
 
 /* TUTORIAL VIDEO*/
 .tutorial .box {
@@ -209,6 +213,20 @@ h6 {
   flex: 1;
 }
 
+/* FORMS */
+
+form > :not(:first-child) {
+  margin-top: 16px;
+}
+
+form > .form-row {
+  display: flex;
+}
+
+form > .form-row > :not(:first-child) {
+  margin-left: 32px;
+}
+
 /* INPUT */
 .input-group {
   position: relative;
@@ -237,9 +255,8 @@ h6 {
 .input-group > label {
   position: absolute;
 
-  top: 50%;
+  top: 14px;
   left: 28px;
-  transform: translateY(-50%);
 
   font-family: Nunito;
   font-style: normal;
@@ -259,11 +276,29 @@ h6 {
 .input-group > img {
   position: absolute;
 
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 16px;
+  top: 14px;
 
   pointer-events: none;
+}
+
+.input-group > textarea.input {
+  padding-top: 14px;
+  border-radius: 24px;
+  min-height: 144px;
+
+  resize: none;
+}
+
+.input-group > input::-webkit-outer-spin-button,
+.input-group > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.input-group > input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .input-group > select ~ img {
@@ -271,8 +306,8 @@ h6 {
   transition: transform 0.2s;
 }
 
-.input-group > input:not(:placeholder-shown) + label,
-.input-group > input:focus + label,
+.input-group > .input:not(:placeholder-shown) + label,
+.input-group > .input:focus + label,
 .input-group > select:focus + label,
 .input-group > select:not([value=""]):valid + label {
   top: 0;
@@ -311,7 +346,7 @@ h6 {
   min-width: 48px;
   display: flex;
 
-  transition: width .3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 
   overflow: hidden;
 }
@@ -366,7 +401,84 @@ h6 {
   width: 100%;
 }
 
-.search-bar:focus-within > input{
+.search-bar:focus-within > input {
   cursor: initial;
   opacity: 1;
+}
+
+/* FOOTER CONTENT */
+.contact-us-form {
+  margin: 80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-us-form > .content {
+  width: 515px;
+}
+
+.contact-us-form > .content span {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  color: #181818;
+}
+
+.contact-us-form > .content h2 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 56px;
+
+  color: #eb0029;
+}
+
+.contact-us-form > .content h5 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+
+  color: #181818;
+}
+
+.contact-us-form > form {
+  width: 624px;
+  margin-top: 56px;
+}
+
+.contact-us-form > form .submit {
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 54px;
+
+  background: #eb0029;
+  border-radius: 56px;
+
+  width: 100%;
+  border: none;
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  color: #ffffff;
 }

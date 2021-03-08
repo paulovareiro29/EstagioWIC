@@ -320,25 +320,28 @@
         <div id="tutorials-area">
             <div class="options">
                 <form class="filter" method="GET" action="#">
-                    <div class="input-group">
-                        <select class="input" name="" id="" value="">
-                            <option value=""></option>
-                            <option value="e">e</option>
-                        </select>
-                        <label for="">ORDENAR POR</label>
-                        <img src="src/images/icons/inputs/select.svg" alt="">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <select class="input" name="" id="" value="">
+                                <option value=""></option>
+                                <option value="e">e</option>
+                            </select>
+                            <label for="">ORDENAR POR</label>
+                            <img src="src/images/icons/inputs/select.svg" alt="">
+                        </div>
+
+                        <div class="input-group">
+                            <select class="input" name="" id="" value="">
+                                <option value=""></option>
+                                <option value="e">e</option>
+                            </select>
+                            <label for="">FILTRAR POR</label>
+                            <img src="src/images/icons/inputs/select.svg" alt="">
+                        </div>
+
+                        <button type="submit"><img src="src/images/icons/inputs/filter.svg" alt=""></button>
                     </div>
 
-                    <div class="input-group">
-                        <select class="input" name="" id="" value="">
-                            <option value=""></option>
-                            <option value="e">e</option>
-                        </select>
-                        <label for="">FILTRAR POR</label>
-                        <img src="src/images/icons/inputs/select.svg" alt="">
-                    </div>
-
-                    <button type="submit"><img src="src/images/icons/inputs/filter.svg" alt=""></button>
                 </form>
 
                 <form action="" class="search">
@@ -713,7 +716,45 @@
         </div>
     </main>
     <footer>
+        <div class="contact-us-form">
+            <div class="content">
+                <span>Contactos</span>
+                <h2>Entre em contacto</h2>
+                <h5>Contacte a nossa equipa para que não restem dúvidas.</h5>
+            </div>
+            <form action="#">
+                <div class="form-row">
+                    <div class="input-group">
+                        <input class="input" placeholder=" " type="text">
+                        <label for="">Nome</label>
+                        <img src="src/images/icons/inputs/name.svg" alt="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <input class="input" placeholder=" " type="email">
+                        <label for="">E-mail</label>
+                        <img src="src/images/icons/inputs/email.svg" alt="">
+                    </div>
+                    <div class="input-group">
+                        <input class="input" placeholder=" " type="number">
+                        <label for="">Telefone</label>
+                        <img src="src/images/icons/inputs/phone.svg" alt="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <textarea class="input" placeholder=" " name="" id=""></textarea>
+                        <label for="">Mensagem</label>
+                        <img src="src/images/icons/inputs/message.svg" alt="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button class="submit" type="submit">Submeter</button>
+                </div>
 
+            </form>
+        </div>
     </footer>
 
     <script src="script.js"></script>
