@@ -1,0 +1,315 @@
+/*  CONTACTOS
+        1 - Header (landing)
+            1.1 - Sidebar
+        2 - 
+*/
+
+/* INDEX 1 */
+#landing {
+  display: flex;
+  height: 900px;
+}
+
+/* INDEX 1.1 */
+#landing > .sidebar {
+  background: #181818;
+  min-width: 80px;
+  max-width: 80px;
+}
+
+#landing > .sidebar > .content {
+  min-height: 780px;
+  max-height: 780px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#landing > .sidebar > .content img {
+  cursor: pointer;
+}
+
+#landing > .sidebar > .content .menu {
+  margin-top: 72px;
+}
+
+#landing > .sidebar > .content .social {
+  display: flex;
+  flex-direction: column;
+  padding: 35px 0px;
+}
+
+#landing > .sidebar > .content .social img {
+  margin-top: 30px;
+}
+
+#landing > .sidebar > .back {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  cursor: pointer;
+  background-color: #eb0029;
+}
+
+/* INDEX 1.2*/
+#landing > .main {
+  position: relative;
+}
+
+#landing > .main > .background {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#landing > .main .wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+/* INDEX 1.2.1*/
+#landing > .main .wrapper > .header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  height: 108px;
+  border-bottom: 0.5px solid #e1e1e1;
+
+  max-width: 1251px;
+
+  margin-left: 109px;
+}
+
+#landing > .main .wrapper > .header .logo {
+  margin-right: 188px;
+}
+
+#landing > .main .wrapper > .header .nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: black;
+}
+
+#landing > .main .wrapper > .header .nav ul {
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+  margin-bottom: 0px;
+  list-style-type: none;
+  padding: 0px;
+}
+
+#landing > .main .wrapper > .header .nav ul li {
+  cursor: pointer;
+  margin-left: 56px;
+}
+
+#landing > .main .wrapper > .header .nav ul > :first-child {
+  margin-left: 0px;
+}
+
+#landing > .main .wrapper > .header .nav ul > :last-child {
+  margin-left: 32px;
+  background-color: #eb0029;
+  padding: 6px 28.5px 5px 28.5px;
+  border-radius: 32px;
+  color: white;
+}
+
+#landing > .main .wrapper > .header .nav .search {
+  margin-right: 87px;
+  margin-left: 67px;
+  cursor: pointer;
+}
+
+/* INDEX 1.2.2 */
+#landing > .main .wrapper > .content {
+  margin-top: 147px;
+  margin-left: 109px;
+  display: flex;
+}
+
+#landing > .main .wrapper > .content > .left {
+  min-width: 613px;
+  max-width: 613px;
+}
+
+#landing > .main .wrapper > .content > .left span {
+  width: 84px;
+  height: 20px;
+  top: 248px;
+  left: 189px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+#landing > .main .wrapper > .content > .left h2 {
+  width: 409px;
+  height: 168px;
+  top: 268px;
+  left: 189px;
+  margin: 0px;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 56px;
+  color: #eb0029;
+}
+
+#landing > .main .wrapper > .content > .left h5 {
+  width: 438px;
+  height: 64px;
+  top: 460px;
+  left: 189px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.input-group input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  font-family: Nunito;
+  width: 100%;
+  border: none;
+  min-height: 24px;
+  outline: none;
+}
+
+textarea {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.form-row >:not(:only-child):first-child {
+  margin-left: 0px;
+  margin-right: 16px;
+}
+
+.form-row >:not(:only-child):last-child {
+  margin-right: 0px;
+  margin-left: 16px;
+}
+
+#submeter {
+  height: 62px;
+  width: 625px;
+  left: 736px;
+  top: 656px;
+  margin-top: 32px;
+  border-radius: 56px;
+  border: #eb0029;
+  padding: 18px, 54px;
+  font-family: Nunito;
+  color: white;
+  font-weight: 600;
+  line-height: 26px;
+  font-size: 18px;
+  background-color: #eb0029;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.input-group {
+  position: relative;
+  flex: 1;
+  min-height: 48px;
+  border: 1px solid #e1e1e1;
+  border-radius: 80px;
+  font-family: Nunito;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group > .wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 28px ;
+}
+
+.input-group > .wrapper .image {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.input-group.textarea{
+  border-radius: 24px;
+  
+}
+
+.input-group.textarea > .wrapper{
+  padding: 14px 0px ;
+  height: 144px;
+}
+
+.input-group.textarea > .wrapper > textarea{
+  margin: 0px 28px;
+  min-height: 100%;
+  flex: 1;
+  resize: none;
+}
+
+.input-group.textarea > .wrapper > label{
+  margin: 14px 0px;
+}
+
+.input-group.textarea > .wrapper .image {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 28px;
+}
+
+label {
+  position: absolute;
+  top: 14px;
+  left: 28px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  transform: translateY(-50%);
+  -webkit-transition: top .2s ease-in-out,  font-size .2s ease-in-out;
+  transition: top .2s ease-in-out,  font-size .2s ease-in-out;
+}
+
+.input-group > .wrapper > input:focus + label{
+  top: 0px;
+  font-size: 8px;
+}
+
+.input-group > .wrapper > input:not(:placeholder-shown) + label{
+  top: 0px;
+  font-size: 8px;
+}
+
+.input-group > .wrapper > textarea:focus + label{
+  top: 0px;
+  font-size: 8px;
+}
+
+.input-group > .wrapper > textarea:not(:placeholder-shown) + label{
+  top: 0px;
+  font-size: 8px;
+}
+
+
