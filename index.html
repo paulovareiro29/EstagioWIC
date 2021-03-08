@@ -1,11 +1,787 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- -->
+
+    <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/home.css">
+
+
+    <title>Home</title>
 </head>
-<body>
-    
+
+<body onload="loadHome()">
+    <header>
+        <div id="landing">
+            <!-- SIDEBAR -->
+            <div id="sidebar" class="sidebar closed">
+                <div id="sidebar-content" class="content">
+                    <div class="wrapper">
+                        <div class="header">
+                            <div class="logo">
+                                <img src="src/images/logo_white.svg" />
+                            </div>
+                            <div class="search">
+                                <img src="src/images/icons/search/48_search.svg">
+                            </div>
+                        </div>
+                        <div class="body">
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="#">Início</a></li>
+                                    <li class="dropdown">
+                                        <a href="#">Soluções</a>
+                                        <div class="dropdown-content">
+                                            <a href="#">Corporate</a>
+                                            <a href="#">Advanced</a>
+                                            <a href="#">Enterprise</a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#">Tutoriais</a>
+                                        <div class="dropdown-content">
+                                            <a href="#">Tutorial 1</a>
+                                            <a href="#">Tutorial 2</a>
+                                            <a href="#">Tutorial 3</a>
+                                        </div>
+                                    </li>
+                                    <li><a href="#">Contactos</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <ul>
+                                <li><a href="#">Sobre nós</a></li>
+                                <li><a href="#">Termos e condições</a></li>
+                                <li><a href="#">Política de cookies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bar">
+                    <div class="buttons">
+                        <div class="menu">
+                            <img id="sidebar-menu-open" src="src/images/icons/menu.svg">
+                            <img id="sidebar-menu-close" src="src/images/icons/x.svg">
+                        </div>
+                        <div class="social closed">
+                            <img class="facebook" src="src/images/icons/socials/facebook.svg">
+                            <img class="instagram" src="src/images/icons/socials/instagram.svg">
+                            <img class="twitter" src="src/images/icons/socials/twitter.svg">
+                        </div>
+                        <div class="social open">
+                            <img class="facebook" src="src/images/icons/socials/facebook_white.svg">
+                            <img class="instagram" src="src/images/icons/socials/instagram_white.svg">
+                            <img class="twitter" src="src/images/icons/socials/twitter_white.svg">
+                        </div>
+                    </div>
+
+                    <div class="slide-counter">
+                        <span id="slide-counter">1 / 8</span>
+                    </div>
+                </div>
+            </div>
+            <!-- END SIDEBAR -->
+
+            <div class="main">
+
+                <div id="landing-carrossel" class="background">
+                    <div class="video showing">
+                        <img src="src/images/home/landing.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing2.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing2.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing2.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                    <div class="video">
+                        <img src="src/images/home/landing2.svg">
+                        <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                    </div>
+                </div>
+                <div class="overlay"></div>
+                <div class="wrapper">
+                    <div class="header">
+                        <div class="logo">
+                            <img src="src/images/logo_white.svg" />
+                        </div>
+                        <div class="nav">
+                            <ul>
+                                <li>Início</li>
+                                <li>Soluções</li>
+                                <li>Tutoriais</li>
+                                <li>Contactos</li>
+                                <li>Demonstração</li>
+                            </ul>
+
+                            <div class="search">
+                                <img src="src/images/icons/search/48_search.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="left">
+                            <h1>Somos<br> especialistas em <br>PHC.</h1>
+                            <h4>Temos a experiência de <br> 10 anos a implementar software.</h4>
+                        </div>
+                        <div class="right">
+                            <img id="landing-play-btn" src="src/images/icons/play/120_play.svg">
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="slider">
+                            <div id="landing-carrossel-slide-left" class="left">
+                                <img src="src/images/icons/arrows/40_arrow_left.svg" alt="">
+                            </div>
+                            <div id="landing-carrossel-slide-right" class="right">
+                                <img src="src/images/icons/arrows/40_arrow_right.svg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="slide-wrapper">
+                            <div class="slide">
+                                <div class="content">
+                                    <span>Soluções</span>
+                                    <h6>PHC Advanced</h6>
+                                </div>
+                                <div class="arrow">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="content">
+                                    <span>Tutorial</span>
+                                    <h6>Criar consumidor</h6>
+                                </div>
+                                <div class="arrow">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="content">
+                                    <span>Blog</span>
+                                    <h6>Especificações PHC</h6>
+                                </div>
+                                <div class="arrow">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="slide partial-hidden">
+                                <div class="content">
+                                    <span>Blog</span>
+                                    <h6>Especificações PHC</h6>
+                                </div>
+                                <div class="arrow">
+                                    <img src="src/images/icons/arrows/16_arrow_right.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div id="solutions-area">
+            <div class="wrapper">
+                <div id="solutions" class="solutions">
+                    <!-- Solutions go in here-->
+                    <div class="solution enterprise">
+                        <div class="wrapper">
+                            <div class="logo">
+                                <img src="src/images/logo_advanced.svg" alt="">
+                            </div>
+                            <div class="content">
+                                <div class="icon">
+                                    <img src="src/images/icons/enterprise.svg" alt="">
+                                </div>
+                                <h5>PHC<br> Enterprise </h5>
+                            </div>
+                        </div>
+                        <div id="info" class="info">
+                            <h6>DESENVOLVIDO AUMENTAR A<br> CAPACIDADE DAS PEQUENAS E<br> MÉDIAS EMPRESAS.</h6>
+                        </div>
+                    </div>
+
+                    <div class="solution advanced">
+                        <div class="wrapper">
+                            <div class="logo">
+                                <img src="src/images/logo_advanced.svg" alt="">
+                            </div>
+                            <div class="content">
+                                <div class="icon">
+                                    <img src="src/images/icons/advanced.svg" alt="">
+                                </div>
+                                <h5>PHC<br> Advanced</h5>
+                            </div>
+                        </div>
+                        <div id="info" class="info">
+                            <h6>DESENVOLVIDO AUMENTAR A<br> CAPACIDADE DAS PEQUENAS E<br> MÉDIAS EMPRESAS.</h6>
+                        </div>
+                    </div>
+
+
+
+                    <div class="solution corporate">
+                        <div class="wrapper">
+                            <div class="logo">
+                                <img src="src/images/logo_corporate.svg" alt="">
+                            </div>
+                            <div class="content">
+                                <div class="icon">
+                                    <img src="src/images/icons/corporate.svg" alt="">
+                                </div>
+                                <h5>PHC<br> Corporate</h5>
+                            </div>
+                        </div>
+                        <div id="info" class="info">
+                            <h6>DESENVOLVIDO PARA<br> MICROEMPRESAS QUE QUEIRAM<br> AUMENTAR A SUA PRODUTIVIDADE</h6>
+                        </div>
+
+                    </div>
+
+                    <div class="slider">
+                        <div id="solutions-area-toggle">
+                            <img src="src/images/icons/arrows/40_arrow_right.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <span>Soluções</span>
+                    <h2>Soluções pensadas no seu negócio.</h2>
+                    <h5>Temos soluções desde a pequena empresa até a média/grande empresa.</h5>
+                    <a href="#" class="show-more">Descubra mais</a>
+                </div>
+            </div>
+
+            <div class="show-more">
+                <a href="#">Saber mais</a>
+            </div>
+
+        </div>
+
+        <div id="contact-us">
+            <div class="background">
+                <img src="src/images/home/contact-us.svg" alt="">
+                <div class="blur">
+                    <img src="src/images/home/contact-us.svg" alt="">
+                    <div class="white-overlay"></div>
+                </div>
+            </div>
+            <div class="dark-overlay"></div>
+            <div class="content">
+                <h3>Procura uma solução à medida das <br> necessidades <br> do seu negócio?</h3>
+                <a href="#">Contacte-nos</a>
+            </div>
+        </div>
+
+        <div id="tutorials-area">
+            <div class="options">
+                <form class="filter" method="GET" action="#">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <select class="input" name="" id="" value="">
+                                <option value=""></option>
+                                <option value="e">e</option>
+                            </select>
+                            <label for="">ORDENAR POR</label>
+                            <img src="src/images/icons/select.svg" alt="">
+                        </div>
+
+                        <div class="input-group">
+                            <select class="input" name="" id="" value="">
+                                <option value=""></option>
+                                <option value="e">e</option>
+                            </select>
+                            <label for="">FILTRAR POR</label>
+                            <img src="src/images/icons/select.svg" alt="">
+                        </div>
+
+                        <button type="submit"><img src="src/images/icons/filter.svg" alt=""></button>
+                    </div>
+
+                </form>
+
+                <form action="" class="search">
+                    <div class="search-bar">
+                        <input type="text" placeholder="PESQUISAR..." aria-label="search">
+                        <button aria-label="submit search">
+                            <img src="src/images/icons/search/24_search.svg" alt="">
+                        </button>
+                    </div>
+                </form>
+
+
+            </div>
+            <div class="main">
+                <div class="content">
+                    <div class="wrapper">
+                        <span>Tutoriais</span>
+                        <h2>Facilitámos<br>
+                            a sua integração<br>
+                            no PHC
+                        </h2>
+                        <h5>Temos os tutoriais necessários para<br> que possa começar já hoje a trabalhar.</h5>
+                        <a href="#">Descubra mais</a>
+                    </div>
+
+                </div>
+                <div id="tutorials" class="tutorials">
+                    <div class="wrapper">
+                        <div class="row">
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tutorial ">
+                                <div class="box">
+                                    <video src="src/videos/video_template_ex1.mp4" name="video"></video>
+                                    <img class="background" src="src/images/tutorials/video_template_ex1.svg" alt="">
+                                    <div class="overlay"></div>
+                                    <img class="fullscreen" src="src/images/icons/arrows/16_arrow_fullscreen.svg"
+                                        alt="">
+                                    <div class="wrapper">
+                                        <div class="play">
+                                            <img src="src/images/icons/play/80_play.svg" name="play" alt="">
+                                        </div>
+                                        <div class="tutorial-content">
+                                            <h5>Criar um cliente genérico em PHC</h5>
+                                            <span>12 Out</span>
+                                            <div class="rating">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_fill.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_half.svg" alt="">
+                                                <img src="src/images/icons/stars/16_star_empty.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slider">
+                        <div id="tutorials-area-toggle">
+                            <img src="src/images/icons/arrows/40_arrow_left.svg">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="show-more">
+                <span id="tutorials-show-more-toggle">Ver mais</span>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="contact-us-form">
+            <div class="content">
+                <span>Contactos</span>
+                <h2>Entre em contacto</h2>
+                <h5>Contacte a nossa equipa para que não restem dúvidas.</h5>
+            </div>
+            <form action="#">
+                <div class="form-row">
+                    <div class="input-group">
+                        <input class="input" placeholder=" " type="text">
+                        <label for="">Nome</label>
+                        <img src="src/images/icons/name.svg" alt="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <input class="input" placeholder=" " type="email">
+                        <label for="">E-mail</label>
+                        <img src="src/images/icons/email.svg" alt="">
+                    </div>
+                    <div class="input-group">
+                        <input class="input" placeholder=" " type="number">
+                        <label for="">Telefone</label>
+                        <img src="src/images/icons/phone.svg" alt="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <textarea class="input" placeholder=" " name="" id=""></textarea>
+                        <label for="">Mensagem</label>
+                        <img src="src/images/icons/message.svg" alt="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button class="submit" type="submit">Submeter</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="footer">
+            <img class="logo" src="src/images/logo_black_white.svg" />
+            <div class="info">
+
+                <section>
+                    <img src="src/images/icons/house.svg" />
+                    <h6>
+                        Rua Prior do Crato nº1B, 4900-500 <br />
+                        Viana do Castelo, Portugal
+                    </h6>
+                </section>
+
+                <section>
+                    <img src="src/images/icons/phone.svg" />
+                    <h6>+351 258 000 000</h6>
+                </section>
+
+                <section>
+                    <img src="src/images/icons/email.svg" />
+                    <h6>parceiro@phc.pt</h6>
+                </section>
+
+            </div>
+            <div class="social">
+                <a href="#"><img src="src/images/icons/socials/facebook_red.svg" /></a>
+                <a href="#"><img src="src/images/icons/socials/instagram_red.svg" /></a>
+                <a href="#"><img src="src/images/icons/socials/twitter_red.svg" /></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
