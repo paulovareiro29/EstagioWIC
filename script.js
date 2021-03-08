@@ -154,4 +154,16 @@ function loadHome() {
       }
     });
   }
+
+
+  
+}
+
+
+
+//selects
+for(let select of document.querySelectorAll("select.input")){
+  select.addEventListener("click", () => {
+    select.setAttribute('value', select.value);
+  })
 }

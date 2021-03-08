@@ -13,10 +13,11 @@
           3.1 - Background
           3.2 - Content
         4 - Tutorials area
-          4.1 - Content
-          4.2 - Tutorials
-          4.3 - Tutorials area showing
-          4.4 - Slider 
+          4.1 - Options
+          4.2 - Content
+          4.3 - Tutorials
+          4.4 - Tutorials area showing
+          4.5 - Slider 
 */
 
 /* INDEX 1 */
@@ -1127,14 +1128,63 @@
   display: flex;
 }
 
-#tutorials-area >.options {
-  background-color: #fffb0080;
+#tutorials-area > .options {
+
   margin-bottom: 40px;
   height: 48px;
+  padding: 0px 80px;
+
+  display: flex;
+  justify-content: flex-end;
 }
 
-
 /* INDEX 4.1 */
+/* TUTORIALS AREA OPTIONS */
+
+#tutorials-area > .options .filter {
+  display: flex;
+}
+
+#tutorials-area > .options .filter button {
+  cursor: pointer;
+
+  min-width: 48px;
+  min-height: 48px;
+
+  background: #eb0029;
+  border-radius: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+}
+
+#tutorials-area > .options .filter > :first-child {
+  margin-left: 0px;
+}
+
+#tutorials-area > .options .filter > * {
+  margin-left: 32px;
+}
+
+#tutorials-area > .options .search {
+  width: 48px;
+  margin-left: 16px;
+
+  display: flex;
+  justify-content: flex-end;
+  
+  transition: width .3s ease-in-out;
+
+}
+
+#tutorials-area > .options .search:focus-within {
+  width: 406px;
+}
+
+/* INDEX 4.2 */
 /* TUTORIALS AREA CONTENT */
 
 #tutorials-area > .main > .content {
@@ -1213,7 +1263,7 @@
   margin-top: 32px;
 }
 
-/* INDEX 4.2 */
+/* INDEX 4.3 */
 /* TUTORIALS AREA TUTORIALS*/
 #tutorials-area > .main > .tutorials {
   width: calc(50% - 80px);
@@ -1259,10 +1309,9 @@
 
 #tutorials-area > .main > .tutorials > .wrapper > :not(:first-child) {
   overflow: hidden;
-
 }
 
-/* INDEX 4.2.1*/
+/* INDEX 4.3.1*/
 /* TUTORIALS AREA TUTORIALS SHOWING*/
 #tutorials-area.showing
   > .main
@@ -1289,7 +1338,7 @@
   margin-top: 0px;
 }
 
-/* INDEX 4.3 */
+/* INDEX 4.4 */
 /* TUTORIALS AREA SHOWING */
 #tutorials-area.showing
   > .main
@@ -1351,7 +1400,6 @@
   text-transform: uppercase;
   text-align: center;
 
-
   color: #ffffff;
 
   transition: color 1s, background-color 1s;
@@ -1366,13 +1414,12 @@
 }
 
 #tutorials-area.showing > .show-more > span.showing {
-  background: #FFFFFF;
+  background: #ffffff;
   color: #000000;
   border: 1px solid #181818;
-
 }
 
-/* INDEX 4.4 */
+/* INDEX 4.5 */
 /* TUTORIALS AREA SLIDER */
 #tutorials-area .slider {
   cursor: pointer;
@@ -1388,7 +1435,6 @@
   justify-content: center;
   align-items: center;
 
-  
   background-color: #eb0029;
   transition: background-color 1s;
 
@@ -1445,176 +1491,4 @@
     left: 50%;
     top: calc(100% - 80px);
   }
-}
-
-/* TUTORIAL */
-.tutorial .box {
-  position: relative;
-  background-color: #181818;
-  display: flex;
-
-  min-height: 480px;
-  min-width: 296px;
-
-  overflow: hidden;
-
-  transition: flex 1s, height 1s, min-height 1s ease;
-}
-
-.tutorial .box > video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-
-  background-color: #000000;
-}
-
-.tutorial .box > .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 1;
-
-  transition: opacity 1s ease;
-}
-
-.tutorial .box > .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  background: #181818;
-  mix-blend-mode: multiply;
-  opacity: 0.75;
-
-  z-index: 2;
-  pointer-events: none;
-}
-
-.tutorial .box > .fullscreen,
-.tutorial .box > .wrapper {
-  z-index: 3;
-}
-
-.tutorial .box > .fullscreen {
-  cursor: pointer;
-
-  position: absolute;
-  top: 16px;
-  right: 16px;
-}
-
-.tutorial .box > .wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-  pointer-events: none;
-}
-
-.tutorial .box > .wrapper .play {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  margin-top: 32px;
-}
-
-.tutorial .box > .wrapper .play img {
-  cursor: pointer;
-  pointer-events: all;
-}
-
-.tutorial .box > .wrapper .tutorial-content {
-  flex: 0;
-  height: 100%;
-  margin: 32px;
-}
-
-.tutorial .box > .wrapper .tutorial-content h5 {
-  font-family: Nunito Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 32px;
-
-  color: #ffffff;
-}
-
-.tutorial .box > .wrapper .tutorial-content span {
-  font-family: Nunito Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
-
-  color: #ffffff;
-}
-
-/*TUTORIAL PLAYING*/
-.tutorial.playing{
-  min-height: 480px;
-}
-
-.tutorial.playing .box {
-  min-height: 0;
-  transition: flex 1s, height 1s, min-height 1.5s ease;
-}
-
-.tutorial.playing .box > .background,
-.tutorial.playing .box > .overlay,
-.tutorial.playing .box > .fullscreen,
-.tutorial.playing .box > .wrapper {
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-.tutorial.playing .box:hover > .wrapper,
-.tutorial.playing .box:hover > .fullscreen {
-  opacity: 1;
-  transition: opacity 1s ease;
-}
-
-.tutorial.playing .box:hover > .overlay {
-  opacity: 0.75;
-  transition: opacity 1s ease;
-}
-
-/* TUTORIAL FULLSCREEN */
-.tutorial.fullscreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  margin: 0 !important;
-
-  background-color: #000000;
-  transition: background-color 0.5s;
-  /* top: 50%;
-  left: 50%;
-
-  margin-right: -50%;
-  transform: translate(-50%, -50%); */
-
-  width: 100% !important;
-  height: 100% !important;
-
-  /* transition:  width 1s; */
-
-  z-index: 50;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.tutorial.fullscreen .box {
-  position: relative;
-  flex: 1;
 }
