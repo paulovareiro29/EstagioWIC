@@ -24,7 +24,6 @@ function loadHome() {
 
     for (let i = 0; i < background_list.length; i++) {
       background_list[i].classList.remove("showing");
-
       background_list[i].classList.remove("playing");
       background_list[i].querySelector("video").pause();
       background_list[i].querySelector("video").currentTime = 0;
@@ -55,15 +54,19 @@ function loadHome() {
     });
 
   //landing play button
-  document.getElementById("landing-play-btn").addEventListener("click", () => {
-    if (background_list[pos].classList.contains("playing")) {
-      background_list[pos].classList.remove("playing");
-      background_list[pos].querySelector("video").pause();
-    } else {
-      background_list[pos].classList.add("playing");
-      background_list[pos].querySelector("video").play();
-    }
-  });
+  for (let background_video of background_list) {
+    background_video
+      .querySelector(".landing-play-btn")
+      .addEventListener("click", () => {
+        if (background_video.classList.contains("playing")) {
+          background_video.classList.remove("playing");
+          background_video.querySelector("video").pause();
+        } else {
+          background_video.classList.add("playing");
+          background_video.querySelector("video").play();
+        }
+      });
+  }
 
   //solutions area
   document

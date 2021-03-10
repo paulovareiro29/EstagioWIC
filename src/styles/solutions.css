@@ -1,0 +1,239 @@
+/*  
+INDEX 
+    1 - Header text
+    2 - Solutions
+        2.1 - Solutions row
+        2.2 - Solution
+        2.3 - Solution Features
+        2.4 - Solution Image
+
+
+*/
+
+/* INDEX 1 */
+header > .main > .wrapper > .content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+header > .main > .wrapper > .content .info {
+  align-self: flex-start;
+  margin-top: 80px;
+  flex-grow: 1;
+  max-width: 438px;
+}
+
+header > .main > .wrapper > .content .info span {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+
+  color: #181818;
+}
+
+header > .main > .wrapper > .content .info h2 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 56px;
+
+  color: #eb0029;
+
+  max-width: 409px;
+}
+
+header > .main > .wrapper > .content .info h5 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+
+  color: #181818;
+
+  margin-top: 24px;
+}
+
+/* INDEX 2 */
+main > #solutions-area {
+  position: relative;
+
+  margin-top: -256px;
+  margin-left: 189px;
+
+  margin-bottom: 40px;
+
+  z-index: 5;
+  overflow: hidden;
+}
+
+main > #solutions-area > :not(:first-child) {
+  margin-top: 32px;
+}
+
+main > #solutions-area > :nth-child(2n) {
+  transform: translateX(219px);
+}
+
+/* INDEX 2.1 */
+main > #solutions-area > .solution-row {
+  display: flex;
+  max-height: 536px;
+}
+
+/* INDEX 2.2 */
+main > #solutions-area .solution {
+  min-width: 405px;
+  min-height: 536px;
+
+  margin-right: 32px;
+}
+
+main > #solutions-area .solution > .content {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  min-height: 400px;
+  padding: 32px;
+}
+
+main > #solutions-area .solution.corporate > .content {
+  background: #ff1f46;
+}
+
+main > #solutions-area .solution.advanced > .content {
+  background: #eb0029;
+}
+
+main > #solutions-area .solution.enterprise > .content {
+  background: #b80020;
+}
+
+main > #solutions-area .solution > .content .logo {
+  align-self: flex-end;
+  width: 123px;
+  height: 56px;
+}
+
+main > #solutions-area .solution > .content .name {
+  margin-top: auto;
+}
+
+main > #solutions-area .solution > .content .name h5 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+
+  text-transform: uppercase;
+  color: #ffffff;
+
+  margin-top: 32px;
+}
+
+/*SOLUTION INFO FOOTER*/
+main > #solutions-area .solution > .info {
+  background: rgb(24, 24, 24, 0.9);
+  height: 136px;
+  padding: 32px;
+
+  box-sizing: border-box;
+}
+
+main > #solutions-area .solution > .info h6 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  max-width: 292px;
+}
+
+/* INDEX 2.3 */
+main > #solutions-area .solution.corporate + .features {
+  background: #ff1f46;
+}
+main > #solutions-area .solution.advanced + .features {
+  background: #eb0029;
+}
+main > #solutions-area .solution.enterprise + .features {
+  background: #b80020;
+}
+
+main > #solutions-area .features {
+  min-width: 405px;
+  padding: 32px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+main > #solutions-area .features ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 16px;
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #ffffff;
+}
+
+main > #solutions-area .features h6 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+/* INDEX 2.4 */
+main > #solutions-area .image {
+  position: relative;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+main > #solutions-area .image > .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: #181818;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+
+  z-index: 2;
+}
+
+main > #solutions-area .image img {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  min-height: 100%;
+  min-width: 100%;
+}

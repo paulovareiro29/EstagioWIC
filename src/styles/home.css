@@ -66,80 +66,54 @@ header >.main >.background .video {
   width: 100%;
   min-width: 1440px;
   position: absolute;
-
+  /* z-index: 3; */
   opacity: 0;
-  transition: opacity .2s ease;
+  transition: opacity .3s ease;
 }
 
-header >.main >.background .video img{
+header >.main >.background .video >.content{
+  position: absolute;
+  top: 315px;
+  left: 109px;
+
+  color: white;
+  z-index: 2;
+
+  transition: opacity .3s ease;
+}
+
+header >.main >.background .video img.background{
   width: 100%;
   position: absolute;
 
-  transition: opacity .2s ease;
+  transition: opacity .3s ease;
 }
 
 header >.main >.background .video video{
   opacity: 0;
-  transition: opacity .2s ease;
+  position: relative;
+
+  transition: opacity .3s ease;
 }
 
-header > .main > .background .video.showing {
-  opacity: 1;
-}
-
-header > .main > .background .video.playing img {
-  opacity: 0;
-}
-
-header > .main > .background .video.playing video {
-  opacity: 1;
-}
-
-
-header > .main > .overlay {
+header > .main > .background .video .landing-play-btn {
+  cursor: pointer;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  top: 390px;
+  left: 65%;
 
-  background: #181818;
-  mix-blend-mode: multiply;
-  opacity: 0.6;
+  z-index: 3;
+  transition: opacity .3s ease;
 }
 
-
-
-
-/* INDEX 1.2.1*/
-
-header > .main >.wrapper > .header .nav a{
-  color: white;
-}
-
-/* INDEX 1.2.2 */
-header > .main >.wrapper > .content {
-  margin-top: 147px;
-  margin-left: 109px;
-  display: flex;
-}
-
-header > .main >.wrapper > .content > .left {
-  min-width: 50%;
-  max-width: 50%;
-
-  color: white;
-}
-
-header > .main >.wrapper > .content > .left h1 {
+header > .main > .background .video >.content h1 {
   margin: 0px;
   font-weight: 900;
   font-size: 56px;
   line-height: 64px;
 }
 
-header > .main >.wrapper > .content > .left h4 {
+header > .main > .background .video >.content h4 {
   margin-top: 24px;
   min-width: 438px;
   max-width: 438px;
@@ -148,15 +122,70 @@ header > .main >.wrapper > .content > .left h4 {
   line-height: 40px;
 }
 
-header > .main >.wrapper > .content > .right {
-  display: flex;
-  align-items: center;
-  margin-left: 156px;
-  padding-bottom: 100px;
+header > .main > .background .video.showing {
+  opacity: 1;
 }
 
-header > .main >.wrapper > .content > .right img {
+header > .main > .background .video.playing img.background,
+header > .main > .background .video.playing >.content,
+header > .main > .background .video.playing .landing-play-btn{
+  opacity: 0;
+}
+
+header > .main > .background .video.playing:hover >.content,
+header > .main > .background .video.playing:hover .landing-play-btn {
+  opacity: 1;
+}
+
+header > .main > .background .video.playing >.overlay {
+  opacity: 0;
+}
+
+header > .main > .background .video.playing:hover >.overlay {
+  opacity: 0.6;
+}
+
+header > .main > .background .video.playing video {
+  opacity: 1;
+}
+
+header > .main > .background .video > .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #181818;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+
+  transition: opacity .3s ease;
+}
+
+
+
+/* INDEX 1.2.1*/
+
+header > .main >.wrapper {
+
+}
+
+header > .main >.wrapper > .header {
+
+}
+
+header > .main >.wrapper > .header .nav a{
+  color: white;
+}
+
+/* INDEX 1.2.2 */
+header > .main >.wrapper > .content {
   cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translateY(-50%);
 }
 
 /* INDEX 1.2.3 */
@@ -165,19 +194,22 @@ header > .main >.wrapper > .footer {
   flex-direction: row;
   align-items: flex-end;
 
-  flex-grow: 1;
+  margin-top: auto;
 }
 
 header > .main >.wrapper > .footer .slider {
+
   display: flex;
   flex-direction: row;
 
   min-height: 120px;
   max-height: 120px;
+
 }
 
 header > .main >.wrapper > .footer .slider > .left,
 header > .main >.wrapper > .footer .slider > .right {
+
   cursor: pointer;
 
   display: flex;
@@ -495,8 +527,10 @@ header > .main >.wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 
   background: #181818;
 
-  animation-name: solution-area-slider-slide-in;
-  animation-duration: 2s;
+  /* animation-name: solution-area-slider-slide-in;
+  animation-duration: 2s; */
+
+  transition: right 1s ease;
 
   right: 0px;
   bottom: 0px;
@@ -564,13 +598,13 @@ header > .main >.wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 /* SLIDER */
 #solutions-area.showing > .wrapper > .solutions .slider {
   position: absolute;
-  animation-name: solution-area-slider-slide-out;
-  animation-duration: 2s;
+  /* animation-name: solution-area-slider-slide-out;
+  animation-duration: 2s; */
 
   min-width: 80px;
   max-height: 80px;
 
-  top: 0;
+  bottom: 0px;
   right: -80px;
 }
 
@@ -589,35 +623,29 @@ header > .main >.wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 
 /* INDEX 2.2 */
 /*ANIMATIONS SLIDES*/
-@keyframes solution-area-slider-slide-out {
+/* @keyframes solution-area-slider-slide-out {
   0% {
     right: 0px;
-    top: 320px;
   }
   33% {
     right: -80px;
-    top: 320px;
   }
   100% {
     right: -80px;
-    top: 0;
   }
 }
 
 @keyframes solution-area-slider-slide-in {
   0% {
-    bottom: calc(100% - 80px);
     right: -80px;
   }
   66% {
     right: 0px;
-    bottom: calc(100% - 80px);
   }
   100% {
     right: 0px;
-    bottom: 0px;
   }
-}
+} */
 
 @keyframes slider-slide-in {
   0% {
@@ -1088,6 +1116,7 @@ header > .main >.wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 
   background: #181818;
 
+  
   animation: tutorials-area-slider-slide-out;
   animation-duration: 2s;
 }
