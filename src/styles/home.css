@@ -54,24 +54,28 @@
   line-height: 24px;
 }
 
-
 /* MAIN */
+
+header > .main > .wrapper {
+  z-index: 2;
+}
+
 header > .main > .background {
   position: absolute;
   min-width: 100%;
   min-height: 100%;
 }
 
-header >.main >.background .video {
+header > .main > .background .video {
   width: 100%;
   min-width: 1440px;
   position: absolute;
   /* z-index: 3; */
   opacity: 0;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
-header >.main >.background .video >.content{
+header > .main > .background .video > .content {
   position: absolute;
   top: 315px;
   left: 109px;
@@ -79,21 +83,21 @@ header >.main >.background .video >.content{
   color: white;
   z-index: 2;
 
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
-header >.main >.background .video img.background{
+header > .main > .background .video img.background {
   width: 100%;
   position: absolute;
 
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
-header >.main >.background .video video{
+header > .main > .background .video video {
   opacity: 0;
   position: relative;
 
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
 header > .main > .background .video .landing-play-btn {
@@ -103,17 +107,17 @@ header > .main > .background .video .landing-play-btn {
   left: 65%;
 
   z-index: 3;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
-header > .main > .background .video >.content h1 {
+header > .main > .background .video > .content h1 {
   margin: 0px;
   font-weight: 900;
   font-size: 56px;
   line-height: 64px;
 }
 
-header > .main > .background .video >.content h4 {
+header > .main > .background .video > .content h4 {
   margin-top: 24px;
   min-width: 438px;
   max-width: 438px;
@@ -127,21 +131,21 @@ header > .main > .background .video.showing {
 }
 
 header > .main > .background .video.playing img.background,
-header > .main > .background .video.playing >.content,
-header > .main > .background .video.playing .landing-play-btn{
+header > .main > .background .video.playing > .content,
+header > .main > .background .video.playing .landing-play-btn {
   opacity: 0;
 }
 
-header > .main > .background .video.playing:hover >.content,
+header > .main > .background .video.playing:hover > .content,
 header > .main > .background .video.playing:hover .landing-play-btn {
   opacity: 1;
 }
 
-header > .main > .background .video.playing >.overlay {
+header > .main > .background .video.playing > .overlay {
   opacity: 0;
 }
 
-header > .main > .background .video.playing:hover >.overlay {
+header > .main > .background .video.playing:hover > .overlay {
   opacity: 0.6;
 }
 
@@ -160,27 +164,23 @@ header > .main > .background .video > .overlay {
   mix-blend-mode: multiply;
   opacity: 0.6;
 
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
-
-
 
 /* INDEX 1.2.1*/
 
-header > .main >.wrapper {
-
+header > .main > .wrapper {
 }
 
-header > .main >.wrapper > .header {
-
+header > .main > .wrapper > .header {
 }
 
-header > .main >.wrapper > .header .nav a{
+header > .main > .wrapper > .header .nav a {
   color: white;
 }
 
 /* INDEX 1.2.2 */
-header > .main >.wrapper > .content {
+header > .main > .wrapper > .content {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -189,7 +189,7 @@ header > .main >.wrapper > .content {
 }
 
 /* INDEX 1.2.3 */
-header > .main >.wrapper > .footer {
+header > .main > .wrapper > .footer {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -197,19 +197,16 @@ header > .main >.wrapper > .footer {
   margin-top: auto;
 }
 
-header > .main >.wrapper > .footer .slider {
-
+header > .main > .wrapper > .footer .slider {
   display: flex;
   flex-direction: row;
 
   min-height: 120px;
   max-height: 120px;
-
 }
 
-header > .main >.wrapper > .footer .slider > .left,
-header > .main >.wrapper > .footer .slider > .right {
-
+header > .main > .wrapper > .footer .slider > .left,
+header > .main > .wrapper > .footer .slider > .right {
   cursor: pointer;
 
   display: flex;
@@ -218,15 +215,15 @@ header > .main >.wrapper > .footer .slider > .right {
   background: #eb0029;
 }
 
-header > .main >.wrapper > .footer .slider > .left {
+header > .main > .wrapper > .footer .slider > .left {
   padding: 0px 18.5px 0px 37px;
 }
 
-header > .main >.wrapper > .footer .slider > .right {
+header > .main > .wrapper > .footer .slider > .right {
   padding: 0px 38px 0px 18.5px;
 }
 
-header > .main >.wrapper > .footer .slide-wrapper {
+header > .main > .wrapper > .footer .slide-wrapper {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -234,7 +231,7 @@ header > .main >.wrapper > .footer .slide-wrapper {
   color: white;
 }
 
-header > .main >.wrapper > .footer .slide-wrapper > .slide {
+header > .main > .wrapper > .footer .slide-wrapper > .slide {
   display: flex;
   align-items: center;
   background: #181818;
@@ -245,12 +242,12 @@ header > .main >.wrapper > .footer .slide-wrapper > .slide {
   padding: 0px 0px 0px 38px;
 }
 
-header > .main >.wrapper > .footer .slide-wrapper > .slide .content {
+header > .main > .wrapper > .footer .slide-wrapper > .slide .content {
   display: flex;
   flex-direction: column;
 }
 
-header > .main >.wrapper > .footer .slide-wrapper > .slide .content span {
+header > .main > .wrapper > .footer .slide-wrapper > .slide .content span {
   font-family: Nunito;
   font-style: normal;
   font-weight: normal;
@@ -260,14 +257,14 @@ header > .main >.wrapper > .footer .slide-wrapper > .slide .content span {
   letter-spacing: 0.125em;
 }
 
-header > .main >.wrapper > .footer .slide-wrapper > .slide .content h6 {
+header > .main > .wrapper > .footer .slide-wrapper > .slide .content h6 {
   margin: 0;
   font-weight: 900;
   font-size: 16px;
   line-height: 24px;
 }
 
-header > .main >.wrapper > .footer .slide-wrapper > .slide .arrow {
+header > .main > .wrapper > .footer .slide-wrapper > .slide .arrow {
   cursor: pointer;
 
   display: flex;
@@ -277,13 +274,13 @@ header > .main >.wrapper > .footer .slide-wrapper > .slide .arrow {
   padding: 18px;
 }
 
-header > .main >.wrapper > .footer .slide-wrapper > .slide.hidden {
+header > .main > .wrapper > .footer .slide-wrapper > .slide.hidden {
   display: none;
 }
 
 header
   > .main
-  >.wrapper
+  > .wrapper
   > .footer
   .slide-wrapper
   > .slide.partial-hidden
@@ -291,12 +288,12 @@ header
   display: none;
 }
 
-header > .main >.wrapper > .footer .slide-wrapper > .slide.partial-hidden {
+header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden {
   padding: 0px 8px 0px 8px;
 }
 
-header > .main >.wrapper > .footer .slide-wrapper > .slide.partial-hidden span,
-header > .main >.wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
+header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden span,
+header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
   filter: blur(1.5px) opacity(50%);
 }
 
@@ -799,7 +796,6 @@ header > .main >.wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 }
 
 #tutorials-area > .options {
-
   margin-bottom: 40px;
   height: 48px;
   padding: 0px 80px;
@@ -837,9 +833,8 @@ header > .main >.wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 
   display: flex;
   justify-content: flex-end;
-  
-  transition: width .3s ease-in-out;
 
+  transition: width 0.3s ease-in-out;
 }
 
 #tutorials-area > .options .search:focus-within {
@@ -1116,7 +1111,6 @@ header > .main >.wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 
   background: #181818;
 
-  
   animation: tutorials-area-slider-slide-out;
   animation-duration: 2s;
 }
@@ -1155,5 +1149,3 @@ header > .main >.wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
     top: calc(100% - 80px);
   }
 }
-
-

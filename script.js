@@ -179,11 +179,9 @@ function loadHome() {
   //fullscreen
   for (let i = 0; i < tutorials.length; i++) {
     tutorials[i].querySelector(".fullscreen").addEventListener("click", () => {
-      console.log("clic");
       if (
         document.getElementById("tutorials-area").classList.contains("showing")
       ) {
-        console.log("hes");
         let box = tutorials[i].querySelector(".box");
         if (tutorials[i].classList.contains("fullscreen")) {
           box.style.height = null;
@@ -231,6 +229,102 @@ function loadSelects() {
   for (let select of document.querySelectorAll("select.input")) {
     select.addEventListener("click", () => {
       select.setAttribute("value", select.value);
+    });
+  }
+}
+
+function loadTutorials() {
+  let slide_counter = document.getElementById("tutorials").childElementCount;
+  let pos = 0;
+  let tutorial_pages = document.getElementById("tutorials").children;
+
+  document.getElementById("tutorials-slide-counter").innerHTML = `${
+    pos + 1
+  } / ${slide_counter}`;
+
+  function changeTutorialPage(direction = true) {
+    if (direction) {
+      pos++;
+      if (pos >= slide_counter) {
+        pos = 0;
+      }
+    } else {
+      pos--;
+      if (pos < 0) {
+        pos = slide_counter - 1;
+      }
+    }
+
+    for (let i = 0; i < tutorial_pages.length; i++) {
+      tutorial_pages[i].classList.add("hide");
+
+      if (i == pos) {
+        tutorial_pages[i].classList.remove("hide");
+      }
+    }
+
+
+    document.getElementById("tutorials-slide-counter").innerHTML = `${
+      pos + 1
+    } / ${slide_counter}`;
+  }
+
+  document
+    .getElementById("tutorials-slide-left")
+    .addEventListener("click", () => {
+      changeTutorialPage(false);
+    });
+
+  document
+    .getElementById("tutorials-slide-right")
+    .addEventListener("click", () => {
+      changeTutorialPage(true);
+    });
+
+  //tutorial
+  let tutorials = document.getElementsByClassName("tutorial");
+
+  //playing video
+  for (let i = 0; i < tutorials.length; i++) {
+    tutorials[i]
+      .querySelector(".box >.wrapper >.play >img")
+      .addEventListener("click", () => {
+        let video = tutorials[i]
+          .querySelector(".box")
+          .children.namedItem("video");
+        if (tutorials[i].classList.contains("playing")) {
+          video.pause();
+
+          tutorials[i].classList.remove("playing");
+        } else {
+          tutorials[i].classList.add("playing");
+          video.play();
+        }
+      });
+  }
+
+  //fullscreen
+  for (let i = 0; i < tutorials.length; i++) {
+    tutorials[i].querySelector(".fullscreen").addEventListener("click", () => {
+      let box = tutorials[i].querySelector(".box");
+      if (tutorials[i].classList.contains("fullscreen")) {
+        box.style.height = null;
+
+        tutorials[i].classList.remove("fullscreen");
+      } else {
+        var elementTransition = box.style.transition;
+        box.style.transition = "";
+
+        requestAnimationFrame(function () {
+          box.style.height = 0 + "px";
+          box.style.transition = elementTransition;
+
+          requestAnimationFrame(function () {
+            box.style.height = window.innerHeight + "px";
+          });
+        });
+        tutorials[i].classList.add("fullscreen");
+      }
     });
   }
 }

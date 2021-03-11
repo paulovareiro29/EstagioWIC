@@ -1,0 +1,200 @@
+/*
+    INDEX 
+        1 - Header text
+        2 - Tutorials area
+        2.1 - Options
+        2.2 - Tutorials
+        2.3 - Tutorials page (has 3 rows)
+        2.4 - Page rows
+*/
+
+/* INDEX 1 */
+header > .main > .wrapper > .content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+header > .main > .wrapper > .content .info {
+  align-self: flex-start;
+  margin-top: 80px;
+  flex-grow: 1;
+  max-width: 438px;
+}
+
+header > .main > .wrapper > .content .info span {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+
+  color: #181818;
+}
+
+header > .main > .wrapper > .content .info h2 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 56px;
+
+  color: #eb0029;
+
+  max-width: 409px;
+}
+
+header > .main > .wrapper > .content .info h5 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+
+  color: #181818;
+
+  margin-top: 24px;
+}
+
+/* INDEX 2 */
+main > .tutorials-area {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  margin-top: -256px;
+  margin-left: 189px;
+
+  margin-bottom: 40px;
+  margin-right: 80px;
+}
+
+/* INDEX 2.1 */
+main > .tutorials-area .options {
+  display: flex;
+  justify-content: flex-end;
+
+  box-sizing: border-box;
+  margin-bottom: 28px;
+}
+
+#tutorials-area > .options .filter {
+  display: flex;
+}
+
+#tutorials-area > .options .filter button {
+  cursor: pointer;
+
+  min-width: 48px;
+  min-height: 48px;
+
+  background: #eb0029;
+  border-radius: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+}
+
+#tutorials-area > .options .search {
+  width: 48px;
+  margin-left: 16px;
+
+  display: flex;
+  justify-content: flex-end;
+
+  transition: width 0.3s ease-in-out;
+}
+
+#tutorials-area > .options .search:focus-within {
+  width: 406px;
+}
+
+/* INDEX 2.2 */
+#tutorials-area > .tutorials {
+  position: relative;
+  min-height: 1504px;
+  overflow: hidden;
+}
+
+/* INDEX 2.3 */
+#tutorials-area > .tutorials > .page {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  transition: transform .7s ease;
+}
+
+#tutorials-area > .tutorials > .page.hide {
+  transform: translateX(calc(100% + 80px));
+}
+
+/* INDEX 2.4 */
+#tutorials-area > .tutorials > .page > .row {
+  display: flex;
+}
+
+#tutorials-area > .tutorials > .page > .row:not(:first-child) {
+  margin-top: 32px;
+}
+
+#tutorials-area > .tutorials > .page > .row > :not(:first-child) {
+  margin-left: 32px;
+}
+
+#tutorials-area > .tutorials > .page > .row > * {
+  flex: 1 1 29.6%;
+}
+
+#tutorials-area > .tutorials > .page > .row:first-child > :first-child,
+#tutorials-area > .tutorials > .page > .row:nth-child(2n) > :nth-child(2n),
+#tutorials-area > .tutorials > .page > .row:nth-child(3n) > :nth-child(3n) {
+  flex: 1 1 40.8%;
+}
+
+/* INDEX 2.5 */
+#tutorials-area > .slider {
+  display: flex;
+  justify-content: flex-end;
+  height: 80px;
+  align-self: flex-end;
+  background: #eb0029;
+}
+
+#tutorials-area > .slider > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 80px;
+}
+
+#tutorials-area > .slider > .left {
+  cursor: pointer;
+  padding: 0px 16px 0px 32px;
+}
+#tutorials-area > .slider > .right {
+  cursor: pointer;
+  padding: 0px 32px 0px 16px;
+}
+
+#tutorials-area > .slider > .counter {
+  background: #b80020;
+  padding: 0px 23px;
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  text-align: center;
+  color: #ffffff;
+}

@@ -49,7 +49,7 @@ h6 {
   top: 0;
   left: 0;
 
-  z-index: 999;
+  z-index: 91;
 
   display: flex;
   flex-direction: row;
@@ -129,7 +129,7 @@ h6 {
   min-width: 80px;
 }
 
-#sidebar > .bar .home a{
+#sidebar > .bar .home a {
   width: 100%;
   height: 100%;
   display: flex;
@@ -168,7 +168,21 @@ h6 {
 }
 
 #sidebar > .content .wrapper > .header > .search {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  transition: width 0.3s ease-in-out;
   margin-right: 32px;
+  width: 48px;
+
+}
+
+#sidebar > .content .wrapper > .header > .search >.search-bar{
+   border: 1px solid #e1e1e125;
+}
+
+#sidebar > .content .wrapper > .header > .search:focus-within {
+  width: 406px;
 }
 
 #sidebar > .content .wrapper > .body .menu {
@@ -396,7 +410,6 @@ header > .main > .wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
-  z-index: 2;
 }
 
 header > .main > .wrapper > .header {
@@ -410,7 +423,7 @@ header > .main > .wrapper > .header {
 }
 
 header > .main > .wrapper > .header .logo {
-  margin-right: 188px;
+  /* margin-right: 188px; */
 }
 
 header > .main > .wrapper > .header .nav {
@@ -460,22 +473,31 @@ header > .main > .wrapper > .header .nav ul > :last-child a {
 }
 
 header > .main > .wrapper > .header .nav .search {
+  width: 48px;
   margin-right: 87px;
-  margin-left: 67px;
+  margin-left: 67px; 
+  
+  display: flex;
+  justify-content: flex-end;
+
+  /* min-width: 200px; */
+  transition: width .5s ease;
 }
 
+header > .main > .wrapper > .header .nav .search:focus-within {
+  width: 200px;
 
+}
+
+header > .main > .wrapper > .header .nav .search >.search-bar{
+  background: transparent;
+}
 
 /* HEADER GLOBAL CONTENT */
 header > .main > .wrapper > .content {
   margin-left: 109px;
   margin-right: 80px;
 }
-
-
-
-
-
 
 /* TUTORIAL VIDEO*/
 .tutorial .box {
@@ -489,16 +511,16 @@ header > .main > .wrapper > .content {
 
   overflow: hidden;
 
-  transition: flex 1s, height 1s, min-height 1s ease;
+  transition: flex 1s;
 }
 
 .tutorial .box > video {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
+  /* z-index: 1; */
+  min-width: 100%;
+  min-height: 100%;
 
   background-color: #000000;
 }
@@ -509,7 +531,7 @@ header > .main > .wrapper > .content {
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  z-index: 1;
+  /* z-index: 1; */
 
   transition: opacity 1s ease;
 }
@@ -523,13 +545,13 @@ header > .main > .wrapper > .content {
   mix-blend-mode: multiply;
   opacity: 0.75;
 
-  z-index: 2;
+  /* z-index: 2; */
   pointer-events: none;
 }
 
 .tutorial .box > .fullscreen,
 .tutorial .box > .wrapper {
-  z-index: 3;
+  z-index: 1;
 }
 
 .tutorial .box > .fullscreen {
@@ -593,8 +615,8 @@ header > .main > .wrapper > .content {
 }
 
 .tutorial.playing .box {
-  min-height: 0;
-  transition: flex 1s, height 1s, min-height 1.5s ease;
+
+  transition: flex 1s;
 }
 
 .tutorial.playing .box > .background,
@@ -637,7 +659,7 @@ header > .main > .wrapper > .content {
 
   /* transition:  width 1s; */
 
-  z-index: 50;
+  z-index: 999 !important;
 
   display: flex;
   flex-direction: row;
@@ -649,6 +671,13 @@ header > .main > .wrapper > .content {
   position: relative;
   flex: 1;
 }
+
+/* .tutorial.fullscreen .box > .overlay,
+.tutorial.fullscreen .box > .background,
+.tutorial.fullscreen .box > .fullscreen,
+.tutorial.fullscreen .box > .wrapper {
+  z-index: 99;
+} */
 
 /* FORMS */
 
@@ -780,12 +809,12 @@ form > .form-row > :not(:first-child) {
 /* SEARCH BAR */
 .search-bar {
   position: relative;
-  background: #181818;
   border-radius: 48px;
   width: 48px;
   min-width: 48px;
+  min-height: 48px;
   display: flex;
-
+  flex-direction: row-reverse;
   transition: width 0.3s ease-in-out;
 
   overflow: hidden;
@@ -799,7 +828,8 @@ form > .form-row > :not(:first-child) {
   opacity: 0;
   flex-grow: 1;
   padding: 0px 32px;
-  width: 100%;
+  width: calc(100% - 48px - 32px);
+
   background: transparent;
   border: none;
 
@@ -811,7 +841,7 @@ form > .form-row > :not(:first-child) {
 
   letter-spacing: 0.125em;
 
-  color: #ffffff;
+  color: black;
 
   outline: none;
   cursor: pointer;
@@ -819,11 +849,31 @@ form > .form-row > :not(:first-child) {
 
 .search-bar > input::placeholder {
   text-transform: uppercase;
+  color: black;
+}
+
+.search-bar.black {
+  background: #181818;
+}
+
+.search-bar.black > input{
   color: #ffffff;
 }
 
+.search-bar.black > input::placeholder {
+  color: #ffffff;
+}
+
+
 .search-bar > button {
+  position: absolute;
+  top: 0;
+  right: 0;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   border: none;
   background: transparent;
@@ -835,6 +885,7 @@ form > .form-row > :not(:first-child) {
   outline: none;
 
   margin-left: auto;
+  pointer-events: none;
 }
 
 .search-bar:focus-within {

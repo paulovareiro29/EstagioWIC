@@ -31,39 +31,44 @@
                         <div class="logo">
                             <img src="src/images/logo_white.svg" />
                         </div>
-                        <div class="search">
-                            <img src="src/images/icons/search/48_search.svg">
-                        </div>
+                        <form action="" class="search">
+                            <div class="search-bar black">
+                                <input type="text" placeholder="PESQUISAR..." aria-label="search">
+                                <button aria-label="submit search">
+                                    <img src="src/images/icons/search/48_search.svg" alt="">
+                                </button>
+                            </div>
+                        </form>
                     </div>
                     <div class="body">
                         <div class="menu">
                             <ul>
-                                <li><a href="#">Início</a></li>
+                                <li><a href="index.html">Início</a></li>
                                 <li class="dropdown">
                                     <a href="#">Soluções</a>
                                     <div class="dropdown-content">
-                                        <a href="#">Corporate</a>
-                                        <a href="#">Advanced</a>
-                                        <a href="#">Enterprise</a>
+                                        <a href="solutions.html#corporate">Corporate</a>
+                                        <a href="solutions.html#advanced">Advanced</a>
+                                        <a href="solutions.html#enterprise">Enterprise</a>
                                     </div>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#">Tutoriais</a>
                                     <div class="dropdown-content">
-                                        <a href="#">Tutorial 1</a>
-                                        <a href="#">Tutorial 2</a>
-                                        <a href="#">Tutorial 3</a>
+                                        <a href="tutorials.html#tutorials">Tutorial 1</a>
+                                        <a href="tutorials.html#tutorials">Tutorial 2</a>
+                                        <a href="tutorials.html#tutorials">Tutorial 3</a>
                                     </div>
                                 </li>
-                                <li><a href="#">Contactos</a></li>
+                                <li><a href="contacts.html">Contactos</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="footer">
                         <ul>
-                            <li><a href="#">Sobre nós</a></li>
-                            <li><a href="#">Termos e condições</a></li>
-                            <li><a href="#">Política de cookies</a></li>
+                            <li><a href="about-us.html">Sobre nós</a></li>
+                            <li><a href="terms-and-conditions.html">Termos e condições</a></li>
+                            <li><a href="cookies.html">Política de cookies</a></li>
                         </ul>
                     </div>
                 </div>
@@ -104,9 +109,14 @@
                             <li><a href="#">Demonstração</a></li>
                         </ul>
 
-                        <div class="search">
-                            <img src="src/images/icons/search/48_search_black.svg">
-                        </div>
+                        <form action="" class="search">
+                            <div class="search-bar">
+                                <input type="text" placeholder="PESQUISAR..." aria-label="search">
+                                <button aria-label="submit search">
+                                    <img src="src/images/icons/search/48_search_black.svg" alt="">
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <!-- END TOP NAV -->
@@ -124,7 +134,7 @@
     </header>
     <main>
         <div id="solutions-area" class="solutions-area">
-            <div class="solution-row">
+            <div  id="corporate"  class="solution-row">
                 <div class="solution corporate">
                     <div class="content">
                         <img class="logo" src="src/images/logo_corporate.svg" alt="">
@@ -158,7 +168,7 @@
                 </div>
 
             </div>
-            <div class="solution-row">
+            <div id="advanced"  class="solution-row">
                 <div class="solution advanced">
                     <div class="content">
                         <img class="logo" src="src/images/logo_advanced.svg" alt="">
@@ -196,7 +206,7 @@
                 </div>
 
             </div>
-            <div class="solution-row">
+            <div id="enterprise" class="solution-row">
                 <div class="solution enterprise">
                     <div class="content">
                         <img class="logo" src="src/images/logo_corporate.svg" alt="">
@@ -303,7 +313,7 @@
 
             </div>
             <div class="social">
-                <a href="#"><img src="src/images/icons/socials/facebook_red.svg" /></a>
+                <a href=""><img src="src/images/icons/socials/facebook_red.svg" /></a>
                 <a href="#"><img src="src/images/icons/socials/instagram_red.svg" /></a>
                 <a href="#"><img src="src/images/icons/socials/twitter_red.svg" /></a>
             </div>

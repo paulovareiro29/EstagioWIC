@@ -78,7 +78,7 @@ main > #solutions-area > :not(:first-child) {
   margin-top: 32px;
 }
 
-main > #solutions-area > :nth-child(2n) {
+main > #solutions-area > .solution-row:nth-child(2n) > * {
   transform: translateX(219px);
 }
 
