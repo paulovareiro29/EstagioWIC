@@ -328,3 +328,19 @@ function loadTutorials() {
     });
   }
 }
+
+// Initialize and add the map
+function initMap() {
+  // The location of wic
+  const wic = { lat: 41.693, lng: -8.826  };
+  // The map, centered at wic
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15,
+    center: wic,
+  });
+  // The marker, positioned at wic
+  const marker = new google.maps.Marker({
+    position: wic,
+    map: map,
+  });
+}

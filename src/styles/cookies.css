@@ -83,3 +83,54 @@ header > .main > .wrapper > .content > .info-text::-webkit-scrollbar-thumb {
   background-color: #181818;
   border-radius: 8px;
 }
+
+@media (max-width: 768px) {
+  
+
+  header > .main > .wrapper > .content {
+    display: block;
+    justify-content: space-between;
+    height: 100%;
+    margin-left: 0px;
+  }
+
+  header > .main > .wrapper > .content .info span {
+  font-weight: 400px;
+  font-size: 8px;
+}
+
+header > .main > .wrapper > .content .info h2 {
+  font-size: 24px;
+  line-height: 32px;
+  width: 311px;
+}
+
+header > .main > .wrapper > .content .info h5 {
+  font-size: 14px;
+  line-height: 22px;
+  color: #181818;
+  margin-top: 8px;
+  width: 311px;
+}
+
+header > .main > .wrapper > .content .info-text h6 {
+  font-size: 14px;
+  font-weight: normal;
+  color: #eb0029;
+  width: 311px;
+  font-style: normal;
+}
+
+header > .main > .wrapper > .content .info-text {
+  margin-top: 40px;
+}
+
+header > .main > .wrapper > .content > .info-text p{
+  font-family: Nunito Sans;
+  width: 311px;
+  font-weight: 400;
+  font-size: 14px;
+
+}
+
+}
