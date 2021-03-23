@@ -21,6 +21,7 @@
 */
 
 /* SIDEBAR */
+
 #sidebar > .bar {
   background: #ffffff;
 }
@@ -68,6 +69,7 @@ header > .main > .background {
 
 header > .main > .background .video {
   width: 100%;
+
   min-width: 1440px;
   position: absolute;
   /* z-index: 3; */
@@ -87,7 +89,7 @@ header > .main > .background .video > .content {
 }
 
 header > .main > .background .video img.background {
-  width: 100%;
+  min-width: 100%;
   position: absolute;
 
   transition: opacity 0.3s ease;
@@ -192,6 +194,7 @@ header > .main > .wrapper > .content {
 header > .main > .wrapper > .footer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: flex-end;
 
   margin-top: auto;
@@ -226,28 +229,30 @@ header > .main > .wrapper > .footer .slider > .right {
 header > .main > .wrapper > .footer .slide-wrapper {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
-
+  width: 845px;
+  background: #181818;
   color: white;
 }
 
-header > .main > .wrapper > .footer .slide-wrapper > .slide {
+header > .main > .wrapper > .footer .slide-wrapper > .slider > .right,
+header > .main > .wrapper > .footer .slide-wrapper > .slider > .left {
+  background: #181818;
+}
+
+header > .main > .wrapper > .footer .slide-wrapper .slide {
   display: flex;
   align-items: center;
-  background: #181818;
 
   min-height: 120px;
   max-height: 120px;
-
-  padding: 0px 0px 0px 38px;
 }
 
-header > .main > .wrapper > .footer .slide-wrapper > .slide .content {
+header > .main > .wrapper > .footer .slide-wrapper .slide .content {
   display: flex;
   flex-direction: column;
 }
 
-header > .main > .wrapper > .footer .slide-wrapper > .slide .content span {
+header > .main > .wrapper > .footer .slide-wrapper .slide .content span {
   font-family: Nunito;
   font-style: normal;
   font-weight: normal;
@@ -257,14 +262,15 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide .content span {
   letter-spacing: 0.125em;
 }
 
-header > .main > .wrapper > .footer .slide-wrapper > .slide .content h6 {
+header > .main > .wrapper > .footer .slide-wrapper .slide .content h6 {
   margin: 0;
   font-weight: 900;
   font-size: 16px;
   line-height: 24px;
+  white-space: nowrap;
 }
 
-header > .main > .wrapper > .footer .slide-wrapper > .slide .arrow {
+header > .main > .wrapper > .footer .slide-wrapper .slide .arrow {
   cursor: pointer;
 
   display: flex;
@@ -274,7 +280,7 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide .arrow {
   padding: 18px;
 }
 
-header > .main > .wrapper > .footer .slide-wrapper > .slide.hidden {
+header > .main > .wrapper > .footer .slide-wrapper .slide.hidden {
   display: none;
 }
 
@@ -286,6 +292,17 @@ header
   > .slide.partial-hidden
   .arrow {
   display: none;
+}
+
+#news-carrossel .splide__slide {
+  /* max-width: 210px; */
+}
+
+#news-carrossel .splide__arrows button {
+  background-color: #181818;
+  border: 0;
+  height: 50%;
+  width: 80px;
 }
 
 header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden {
@@ -461,8 +478,8 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
   display: flex;
   flex-direction: column;
   padding: 32px;
-
-  height: 336px;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 #solutions-area > .wrapper > .solutions .solution > .wrapper > .logo {
@@ -513,8 +530,6 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 
 #solutions-area > .wrapper > .solutions .slider {
   position: absolute;
-  right: 0;
-  bottom: 0;
 
   display: flex;
 
@@ -957,7 +972,7 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 }
 
 #tutorials-area > .main > .tutorials > .wrapper .row .tutorial {
-  min-width: 45%;
+  min-width: 43%;
   margin-left: 0px;
   transition: min-width 1s, margin 1s;
 
@@ -1147,5 +1162,395 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
   100% {
     left: 50%;
     top: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 768px) {
+  #sidebar > .bar {
+    background: transparent;
+  }
+
+  #sidebar #sidebar-menu-open {
+    content: url("../images/icons/menu/menu_white.svg");
+  }
+
+  #sidebar > .bar > .buttons .social {
+    opacity: 0;
+  }
+
+  #sidebar > .bar > .slide-counter {
+    display: none;
+  }
+
+  header > .main > .background .video {
+    min-width: 375px;
+    max-height: 667px;
+  }
+
+  header > .main > .background .video img.background {
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  header > .main > .background .video video {
+    left: 50%;
+    transform: translate(-50%);
+    max-height: 667px;
+  }
+
+  header > .main > .background .video .landing-play-btn {
+    width: 64px;
+    top: 176px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  header > .main > .background .video > .content {
+    left: 32px;
+    top: auto;
+    bottom: 96px;
+  }
+
+  header > .main > .background .video > .content h1 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  header > .main > .background .video > .content h4 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    min-width: 241px;
+    max-width: 241px;
+  }
+
+  header > .main > .wrapper > .footer .slider {
+    min-height: 64px;
+    max-height: 64px;
+  }
+
+  header > .main > .wrapper > .footer .slider > .left {
+    padding: 0px 9.25px 0px 18.5px;
+  }
+
+  header > .main > .wrapper > .footer .slider > .right {
+    padding: 0px 18.5px 0px 9.25px;
+  }
+
+  header > .main > .wrapper > .footer .slide-wrapper {
+    display: none;
+  }
+
+  /* SOLUTIONS AREA */
+  #solutions-area {
+    padding: 40px 0px;
+  }
+
+  #solutions-area > .wrapper {
+    flex-direction: column-reverse;
+  }
+
+  #solutions-area > .wrapper > .content {
+    margin-left: 32px;
+    margin-bottom: 48px;
+    transform: translateX(50vw);
+  }
+
+  #solutions-area > .wrapper > .content span {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 20px;
+
+    text-align: center;
+    letter-spacing: 0.125em;
+  }
+
+  #solutions-area > .wrapper > .content h2 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
+
+    max-width: 230px;
+  }
+
+  #solutions-area > .wrapper > .content h5 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    margin-top: 8px;
+    max-width: 311px;
+  }
+
+  #solutions-area > .wrapper > .content .show-more {
+    padding: 12px 34px;
+
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+
+    text-align: center;
+  }
+
+  #solutions-area > .wrapper > .solutions {
+    transform: translateX(calc(50vw - 32px));
+    min-width: 375px;
+    min-height: 240px;
+  }
+
+  #solutions-area > .wrapper > .solutions .solution {
+    width: 53%;
+    min-width: 53%;
+    min-height: 240px;
+    height: 240px;
+  }
+
+  #solutions-area > .wrapper > .solutions .solution > .wrapper {
+    min-height: 240px;
+    height: 240px;
+    max-height: 240px;
+    padding: 16px;
+
+    box-sizing: border-box;
+  }
+
+  #solutions-area > .wrapper > .solutions .solution > .wrapper > .logo img {
+    height: 24px;
+  }
+
+  #solutions-area
+    > .wrapper
+    > .solutions
+    .solution
+    > .wrapper
+    > .content
+    .icon
+    img {
+    width: 16px;
+  }
+
+  #solutions-area > .wrapper > .solutions .solution > .wrapper > .content h5 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+
+    margin-top: 8px;
+  }
+
+  #solutions-area > .wrapper > .solutions .slider {
+    max-height: 56px;
+    min-height: 56px;
+    height: 56px;
+  }
+
+  #solutions-area > .wrapper > .solutions .slider > #solutions-area-toggle {
+    padding: 16px;
+  }
+
+  #solutions-area > .wrapper > .solutions .slider > #solutions-area-toggle img {
+    width: 24px;
+  }
+
+  /* CONTACT US */
+  #contact-us {
+    min-height: 320px;
+    max-height: 320px;
+  }
+
+  #contact-us > .background {
+    min-height: 320px;
+    max-height: 320px;
+  }
+
+  #contact-us > .background img {
+    min-width: 375px;
+    height: 100%;
+    min-height: 320px;
+
+    object-fit: cover;
+  }
+
+  #contact-us > .background .blur {
+    display: none;
+  }
+
+  #contact-us > .content h3 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+
+    text-align: center;
+
+    width: 311px;
+  }
+
+  #contact-us > .content a {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+
+    text-align: center;
+
+    padding: 7px 38px;
+  }
+
+  /* TUTORIALS AREA */
+  #tutorials-area {
+    position: relative;
+    padding: 40px 0px;
+  }
+
+  #tutorials-area > .options {
+    padding: 0px 32px;
+    margin-bottom: 16px;
+
+    position: absolute;
+    right: 0px;
+    top: 348px;
+
+    z-index: 50;
+  }
+
+  #tutorials-area > .options .filter .input-group {
+    display: none;
+  }
+
+
+  #tutorials-area > .options .filter button {
+    margin-top: 0;
+  }
+
+  #tutorials-area > .options .search:focus-within {
+    width: 200px;
+
+
+  }
+
+  #tutorials-area > .main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 56px;
+  }
+
+  #tutorials-area > .main > .content {
+    margin-bottom: 136px;
+    margin-left: 32px;
+  }
+
+  #tutorials-area > .main > .content > .wrapper {
+    margin: 0;
+  }
+
+  #tutorials-area > .main > .content span {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 20px;
+
+    letter-spacing: 0.125em;
+  }
+
+  #tutorials-area > .main > .content h2 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  #tutorials-area > .main > .content h5 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    margin-top: 5px;
+  }
+
+  #tutorials-area > .main > .content a {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+
+    padding: 7px 34px;
+
+    width: 187px;
+    box-sizing: border-box;
+  }
+
+  /* TUTORIALS */
+  #tutorials-area > .main > .tutorials {
+    min-width: 100%;
+    margin: 0;
+    width: auto;
+
+  }
+
+  #tutorials-area > .main > .tutorials > .wrapper {
+    display: flex;
+    flex-direction: row;
+    max-height: 266px;
+
+    margin-left: 32px;
+  }
+
+  #tutorials-area > .main > .tutorials > .wrapper .row{
+    /* flex-grow: 1; */
+    /* margin-right: 31.1%; */
+    width: fit-content;
+  }
+
+  #tutorials-area > .main > .tutorials > .wrapper .tutorial {
+     min-width: 43vw !important;
+    width: 43vw;
+    max-width: 43vw;
+
+    transition: transform .3s ease !important;
+  }
+
+  
+  #tutorials-area .slider {
+    animation: none;
+
+    background-color: #eb0029;
+    transition: background-color 1s;
+    width: 56px;
+    height: 56px;
+
+    top: calc(100% - 56px);
+    left: 32px;
+  }
+
+  #tutorials-area .slider #tutorials-area-toggle img{
+    width: 24px;
+  }
+
+  #tutorials-area > .main > .tutorials > .wrapper > :not(:first-child){
+    overflow: visible;
   }
 }

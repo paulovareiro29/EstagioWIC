@@ -9,7 +9,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  min-width: 1440px;
+  min-width: 375px;
 }
 
 header,
@@ -42,8 +42,15 @@ h6 {
   margin: 0;
 }
 
+@media (min-width: 768px) {
+  body {
+    min-width: 1440px;
+  }
+}
+
 /* SIDEBAR */
 /* INDEX 1.1 */
+
 #sidebar {
   position: absolute;
   top: 0;
@@ -160,9 +167,9 @@ h6 {
 #sidebar > .content .wrapper > .header {
   display: flex;
   justify-content: space-between;
-
-  margin-top: 60px;
-  height: 108px;
+  align-items: center;
+  /* margin-top: 60px; */
+  height: 168px;
 
   border-bottom: 0.5px solid #e1e1e1;
 }
@@ -174,11 +181,16 @@ h6 {
   transition: width 0.3s ease-in-out;
   margin-right: 32px;
   width: 48px;
-
 }
 
-#sidebar > .content .wrapper > .header > .search >.search-bar{
-   border: 1px solid #e1e1e125;
+#sidebar > .content .wrapper > .header > .search > .search-bar {
+  padding: 8px;
+  border: 1px solid #e1e1e125;
+}
+
+#sidebar > .content .wrapper > .header > .search > .search-bar > button {
+  top: 8px;
+  right: 8px;
 }
 
 #sidebar > .content .wrapper > .header > .search:focus-within {
@@ -475,21 +487,20 @@ header > .main > .wrapper > .header .nav ul > :last-child a {
 header > .main > .wrapper > .header .nav .search {
   width: 48px;
   margin-right: 87px;
-  margin-left: 67px; 
-  
+  margin-left: 67px;
+
   display: flex;
   justify-content: flex-end;
 
   /* min-width: 200px; */
-  transition: width .5s ease;
+  transition: width 0.5s ease;
 }
 
 header > .main > .wrapper > .header .nav .search:focus-within {
   width: 200px;
-
 }
 
-header > .main > .wrapper > .header .nav .search >.search-bar{
+header > .main > .wrapper > .header .nav .search > .search-bar {
   background: transparent;
 }
 
@@ -516,11 +527,15 @@ header > .main > .wrapper > .content {
 
 .tutorial .box > video {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   /* z-index: 1; */
   min-width: 100%;
   min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
   background-color: #000000;
 }
@@ -531,6 +546,9 @@ header > .main > .wrapper > .content {
   left: 0;
   min-width: 100%;
   min-height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
   /* z-index: 1; */
 
   transition: opacity 1s ease;
@@ -615,7 +633,6 @@ header > .main > .wrapper > .content {
 }
 
 .tutorial.playing .box {
-
   transition: flex 1s;
 }
 
@@ -640,11 +657,11 @@ header > .main > .wrapper > .content {
 
 /* TUTORIAL FULLSCREEN */
 .tutorial.fullscreen {
-  position: fixed;
-  top: 0;
+  /* position: fixed;
+  bottom: 0;
   left: 0;
 
-  margin: 0 !important;
+  margin: 0 ;
 
   background-color: #000000;
   transition: background-color 0.5s;
@@ -654,22 +671,28 @@ header > .main > .wrapper > .content {
   margin-right: -50%;
   transform: translate(-50%, -50%); */
 
-  width: 100% !important;
-  height: 100% !important;
+  /* width: 100%;
+  height: 100%; */
 
   /* transition:  width 1s; */
 
-  z-index: 999 !important;
+  /* z-index: 999 !important;
 
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: center;  */
 }
 
 .tutorial.fullscreen .box {
   position: relative;
   flex: 1;
+}
+
+.tutorial.fullscreen .box > video {
+  min-height: auto;
+  min-width: auto;
+  object-fit: contain;
 }
 
 /* .tutorial.fullscreen .box > .overlay,
@@ -692,7 +715,10 @@ form > .form-row {
 form > .form-row > :not(:first-child) {
   margin-left: 32px;
 }
-
+#map {
+  height: 240px;
+  width: 100%;
+}
 /* INPUT */
 .input-group {
   position: relative;
@@ -856,14 +882,13 @@ form > .form-row > :not(:first-child) {
   background: #181818;
 }
 
-.search-bar.black > input{
+.search-bar.black > input {
   color: #ffffff;
 }
 
 .search-bar.black > input::placeholder {
   color: #ffffff;
 }
-
 
 .search-bar > button {
   position: absolute;
@@ -1026,4 +1051,354 @@ footer > .footer .social a {
 
 footer > .footer .social > :not(:first-child) {
   margin-left: 18px;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    top: 0;
+    /* left: calc(100% - 80px); */
+
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 82px;
+    overflow: hidden;
+
+    transition: height 1s ease;
+  }
+
+  #sidebar > .bar {
+    min-height: 667px;
+    max-height: 667px;
+    min-width: 71px;
+    max-width: 71px;
+    background: transparent;
+  }
+
+  
+  #sidebar #sidebar-menu-open {
+    content: url("../images/icons/menu/menu_red.svg");
+  }
+
+  #sidebar > .bar > .buttons {
+    min-height: 667px;
+    max-height: 667px;
+    min-width: 71px;
+    max-width: 71px;
+  }
+
+  #sidebar > .bar > .buttons .social {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  #sidebar > .bar > .slide-counter {
+    display: none;
+  }
+
+  #sidebar > .bar > .buttons .menu {
+    margin-top: 33px;
+  }
+
+  /*SIDEBAR CONTENT*/
+  #sidebar > .content .wrapper {
+    margin-left: 54px;
+  }
+
+  #sidebar > .content .wrapper > .header {
+    height: 82px;
+    justify-content: flex-end;
+  }
+
+  #sidebar > .content .wrapper > .header .logo {
+    display: none;
+  }
+
+  #sidebar > .content .wrapper > .body .menu {
+    margin-top: 76px;
+  }
+
+  #sidebar > .content .wrapper > .body .menu > ul {
+    padding-left: 18px;
+  }
+
+  #sidebar > .content .wrapper > .body .menu > ul li {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+
+    color: #ffffff;
+
+    margin-bottom: 24px;
+  }
+
+  #sidebar > .content .wrapper > .body .menu > ul li.dropdown {
+    flex-direction: column;
+  }
+
+  #sidebar
+    > .content
+    .wrapper
+    > .body
+    .menu
+    > ul
+    li.dropdown
+    > .dropdown-content {
+    position: relative;
+
+    top: 16px;
+    left: 30px;
+    height: 0px;
+
+    transition: height 0.2s ease;
+  }
+
+  #sidebar
+    > .content
+    .wrapper
+    > .body
+    .menu
+    > ul
+    li.dropdown
+    > .dropdown-content
+    a {
+    margin-bottom: 16px;
+  }
+
+  #sidebar
+    > .content
+    .wrapper
+    > .body
+    .menu
+    > ul
+    li.dropdown
+    > a:focus
+    + .dropdown-content,
+  #sidebar
+    > .content
+    .wrapper
+    > .body
+    .menu
+    > ul
+    li.dropdown
+    > .dropdown-content:hover,
+  #sidebar
+    > .content
+    .wrapper
+    > .body
+    .menu
+    > ul
+    li.dropdown
+    > .dropdown-content
+    a:focus,
+  #sidebar
+    > .content
+    .wrapper
+    > .body
+    .menu
+    > ul
+    li.dropdown
+    > .dropdown-content:focus {
+    height: 166px;
+  }
+
+  #sidebar > .content .wrapper > .footer ul {
+    margin-bottom: 32px;
+    flex-direction: column;
+    padding-left: 18px;
+  }
+
+  #sidebar > .content .wrapper > .footer ul li {
+    margin-left: 0px;
+  }
+
+  /*OPEN*/
+  #sidebar.open {
+    width: 100%;
+    height: 667px;
+    background: transparent;
+  }
+
+  #sidebar.open > .bar > .buttons .social {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* HEADER MAIN */
+  header {
+    height: 667px;
+  }
+
+  header > .main {
+    margin-left: 0px;
+  }
+
+  header > .main > .wrapper > .header {
+    margin-top: 24px;
+    margin-left: 32px;
+    height: 58px;
+  }
+  header > .main > .wrapper > .header > .nav {
+    display: none;
+  }
+
+  /* TUTORIAL */
+  .tutorial .box {
+    min-height: 266px;
+    height: 266px;
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .tutorial .box > .wrapper .play img {
+    width: 40px;
+    margin-top: 62px;
+  }
+
+  .tutorial .box > .wrapper .tutorial-content {
+    margin: 16px;
+  }
+
+  .tutorial .box > .wrapper .tutorial-content h5 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .tutorial .box > .wrapper .tutorial-content span {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .tutorial.playing {
+    min-height: 266px;
+  }
+
+  /* FOOTER */
+  /* CONTACTS US FORM */
+  footer > .contact-us-form {
+    margin: 40px 0px 40px 0px;
+    padding: 0px 32px;
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  footer > .contact-us-form > .content {
+    width: 100%;
+  }
+
+  footer > .contact-us-form > .content span {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 20px;
+
+    letter-spacing: 0.125em;
+  }
+
+  footer > .contact-us-form > .content h2 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  footer > .contact-us-form > .content h5 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    margin-top: 8px;
+  }
+
+  footer > .contact-us-form > form {
+    margin-top: 32px;
+    width: 100%;
+  }
+
+  footer > .contact-us-form > form .submit {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+
+    padding: 7px 38px;
+    box-sizing: border-box;
+
+    width: 187px;
+    align-self: center;
+  }
+
+  footer > .footer {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 0px 40px 32px;
+
+    box-sizing: border-box;
+  }
+
+  footer > .footer > .logo {
+    border-bottom: 1px solid #6c6c6c;
+    width: 100%;
+
+    padding: 0px 0px 40px 0px;
+  }
+
+  footer > .footer > .logo img {
+    max-height: 32px;
+    width: auto;
+  }
+
+  footer > .footer .info {
+    flex-direction: column;
+    padding: 40px 14px;
+  }
+
+  footer > .footer .info > :not(:first-child) {
+    margin: 24px 0px 0px 0px;
+  }
+
+  footer > .footer .info section h6 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  footer > .footer .social {
+    width: calc(100% - 32px);
+    justify-content: center;
+
+  }
+
+  /* FORM */
+  form > .form-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form > .form-row > :not(:first-child) {
+    margin-left: 0;
+    margin-top: 16px;
+  }
+
+
+
+  header > .main > .wrapper > .content {
+    margin: 0px 32px 0px 32px;
+  }
 }

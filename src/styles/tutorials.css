@@ -103,12 +103,20 @@ main > .tutorials-area .options {
 
 #tutorials-area > .options .search {
   width: 48px;
+  height: 48px;
   margin-left: 16px;
 
   display: flex;
   justify-content: flex-end;
-
+  background-color: #181818;
   transition: width 0.3s ease-in-out;
+
+  border-radius: 48px;
+}
+
+#tutorials-area > .options .search input::placeholder,
+#tutorials-area > .options .search input {
+  color: #ffffff;
 }
 
 #tutorials-area > .options .search:focus-within {
@@ -128,7 +136,7 @@ main > .tutorials-area .options {
   top: 0;
   right: 0;
 
-  transition: transform .7s ease;
+  transition: transform 0.7s ease;
 }
 
 #tutorials-area > .tutorials > .page.hide {
@@ -186,7 +194,7 @@ main > .tutorials-area .options {
 
 #tutorials-area > .slider > .counter {
   background: #b80020;
-  padding: 0px 23px;
+  width: 80px;
 
   font-family: Nunito Sans;
   font-style: normal;
@@ -197,4 +205,105 @@ main > .tutorials-area .options {
 
   text-align: center;
   color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  header > .main > .wrapper > .content .info {
+    margin-top: 40px;
+  }
+
+  header > .main > .wrapper > .content .info span {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 20px;
+  }
+
+  header > .main > .wrapper > .content .info h2 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
+
+    max-width: 230px;
+  }
+
+  header > .main > .wrapper > .content .info h5 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    margin-top: 8px;
+  }
+
+  main > .tutorials-area {
+    margin: -356px 0px 0px 0px;
+  }
+
+  #tutorials-area > .options {
+    margin-right: 32px;
+  }
+
+  #tutorials-area > .options .search:focus-within {
+    width: 247px;
+  }
+
+  #tutorials-area > .options .filter .input-group {
+    display: none;
+  }
+
+  #tutorials-area > .options .filter button[type="submit"] {
+    margin-top: 0;
+  }
+
+  #tutorials-area > .tutorials {
+    min-height: 2490px;
+  }
+
+  #tutorials-area > .tutorials > .page {
+    width: 100%;
+  }
+
+  #tutorials-area > .tutorials > .page > .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #tutorials-area > .tutorials > .page > .row:not(:first-child) {
+    margin-top: 16px;
+  }
+
+  #tutorials-area > .tutorials > .page > .row > :not(:first-child) {
+    margin: 8px 0px 0px 0px;
+  }
+
+  /* SLIDER */
+  #tutorials-area > .slider {
+    height: 56px;
+  }
+
+  #tutorials-area > .slider > * {
+    max-width: 56px;
+    box-sizing: border-box;
+  }
+
+  #tutorials-area > .slider > .left {
+    padding: 0px 8px 0px 16px;
+  }
+
+  #tutorials-area > .slider > .right {
+    padding: 0px 16px 0px 8px;
+  }
+
+  #tutorials-area > .slider > .counter {
+    width: 56px;
+
+    font-size: 14px;
+    line-height: 18px;
+  }
 }

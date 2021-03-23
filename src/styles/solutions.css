@@ -237,3 +237,126 @@ main > #solutions-area .image img {
   min-height: 100%;
   min-width: 100%;
 }
+
+/* SHOW ON SCROLL */
+main > #solutions-area > .solution-row.show-on-scroll {
+  transform: translateX(100%);
+  transition: transform 1s ease;
+}
+
+main > #solutions-area > .solution-row.show-on-scroll.is-visible {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  header > .main > .wrapper > .content .info {
+    margin-top: 40px;
+  }
+
+  header > .main > .wrapper > .content .info span {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 20px;
+  }
+
+  header > .main > .wrapper > .content .info h2 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
+
+    max-width: 230px;
+  }
+
+  header > .main > .wrapper > .content .info h5 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    margin-top: 8px;
+  }
+
+  /* MAIN */
+  main > #solutions-area {
+    margin-top: -356px;
+    margin-left: 32px;
+  }
+
+  main > #solutions-area > .solution-row {
+    max-height: auto;
+  }
+
+  main > #solutions-area .solution {
+    min-height: auto;
+    min-width: 50%;
+
+    margin-right: 8px;
+  }
+
+  main > #solutions-area > .solution-row:nth-child(2n) > * {
+    transform: translateX(8px);
+  }
+
+  main > #solutions-area .solution > .content {
+    min-height: 240px;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  main > #solutions-area .solution > .content .logo {
+    height: 24px;
+    width: auto;
+  }
+
+  main > #solutions-area .solution > .content .name img {
+    width: 16px;
+  }
+
+  main > #solutions-area .solution > .content .name h5 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+
+    margin-top: 8px;
+  }
+
+
+  main > #solutions-area .solution > .info {
+    padding: 16px;
+    height: 104px;
+  }
+
+  main > #solutions-area .solution > .info h6 {
+    font-size: 10px;
+    line-height: 18px;
+
+    font-weight: 500;
+    width: 140px;
+  }
+
+  main > #solutions-area .features{
+    min-width: auto;
+    width: 50%;
+    padding: 16px;
+
+    max-height: 344px;
+  }
+
+  main > #solutions-area .features ul {
+    font-size: 10px;
+    line-height: 14px;
+
+    margin-top: 0px;
+  }
+
+  main > #solutions-area .features h6 {
+    font-size: 14px;
+  }
+}

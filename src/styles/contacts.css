@@ -60,28 +60,76 @@ header > .main > .wrapper > .content .form form {
 }
 
 header > .main > .wrapper > .content .form form .submit {
-    cursor: pointer;
+  cursor: pointer;
 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 54px;
+
+  background: #eb0029;
+  border-radius: 56px;
+
+  width: 100%;
+  border: none;
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  header{
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  header > .main > .wrapper > .content{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 18px 54px;
-  
-    background: #eb0029;
-    border-radius: 56px;
-  
-    width: 100%;
-    border: none;
-  
+    flex-direction: column;
+  }
+  header > .main > .wrapper > .content .info {
+    margin-top: 40px;
+  }
+
+  header > .main > .wrapper > .content .info span {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 20px;
+  }
+
+  header > .main > .wrapper > .content .info h2 {
     font-family: Nunito Sans;
     font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 26px;
-  
-    text-transform: uppercase;
-    text-align: center;
-  
-    color: #ffffff;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
+
+    max-width: 230px;
+  }
+
+  header > .main > .wrapper > .content .info h5 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    margin-top: 8px;
+  }
+
+  header > .main > .wrapper > .content .form {
+    margin-top: 40px;
+    width: 100%;
+  }
 }

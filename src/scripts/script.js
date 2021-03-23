@@ -1,13 +1,92 @@
 loadSidebar();
 loadSelects();
+loadShowOnScroll();
+initMap();
+
+function initMap() {
+  // The location of wic
+  const wic = { lat: 41.693, lng: -8.826 };
+  // The map, centered at wic
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15,
+    center: wic,
+  });
+  // The marker, positioned at wic
+  const marker = new google.maps.Marker({
+    position: wic,
+    map: map,
+  });
+}
 
 function loadHome() {
+  /* BACKGROUND CARROSSEL */
   let slide_counter = document.getElementById("landing-carrossel")
     .childElementCount;
   let pos = 0;
   let background_list = document.getElementById("landing-carrossel").children;
 
-  function updateSlideCounter(direction = true) {
+  let solutionsAreaCounterMobile = 0;
+  let tutorialsAreaCounterMobile = 0;
+
+  new Splide(".splide", {
+    type: "loop",
+    perPage: 3,
+    pagination: false,
+    padding: 32,
+    arrows: false,
+    // focus  : 'center',
+    // arrows: false,
+  }).mount();
+
+  //   /* NEWS CARROSSEL*/
+  //   let news_counter = document.getElementById("news-carrossel").childElementCount - 1; //menos o slider
+  //   let newsPos = 0;
+  //   let newsList = document.getElementById("news-carrossel").querySelectorAll(".slide")
+
+  //   function updateNewsSlideCounter(direction = true){
+
+  //     if (direction) {
+  //       newsPos++;
+  //       if (newsPos >= news_counter) {
+  //         newsPos = 0;
+  //       }
+  //     } else {
+  //       newsPos--;
+  //       if (newsPos < 0) {
+  //         newsPos = news_counter - 1;
+  //       }
+  //     }
+
+  //     for(let news of newsList){
+  //       news.classList.remove("partial-hidden")
+  //       news.classList.add("hidden")
+  //     }
+
+  //     for(let i = 0; i < 3; i++){
+
+  //       let number = newsPos + i
+  //       if(number >= newsList.length){
+  //         number -= newsList.length
+  //       }
+
+  //       newsList[number].classList.remove("hidden")
+  //     }
+  //   }
+
+  //  document
+  //     .getElementById("landing-news-slide-left")
+  //     .addEventListener("click", () => {
+  //       updateNewsSlideCounter(false);
+  //     });
+
+  //   document
+  //     .getElementById("landing-news-slide-right")
+  //     .addEventListener("click", () => {
+  //       updateNewsSlideCounter(true);
+  //     });
+
+  //BACKGROUND CARROSSEL
+  function updateBackgroundSlideCounter(direction = true) {
     //true = right
     //false = left
     if (direction) {
@@ -40,17 +119,16 @@ function loadHome() {
     console.log(pos);
   }
 
-  //carrossel
   document
     .getElementById("landing-carrossel-slide-left")
     .addEventListener("click", () => {
-      updateSlideCounter(false);
+      updateBackgroundSlideCounter(false);
     });
 
   document
     .getElementById("landing-carrossel-slide-right")
     .addEventListener("click", () => {
-      updateSlideCounter(true);
+      updateBackgroundSlideCounter(true);
     });
 
   //landing play button
@@ -74,11 +152,27 @@ function loadHome() {
     .addEventListener("click", () => {
       let solutionsArea = document.getElementById("solutions-area");
       let solutions = document.getElementById("solutions");
+      let clientWidth =
+        document.documentElement.clientWidth || document.body.clientWidth;
 
-      if (solutionsArea.classList.contains("showing")) {
-        solutionsArea.classList.remove("showing");
+      if (clientWidth > 768) {
+        if (solutionsArea.classList.contains("showing")) {
+          solutionsArea.classList.remove("showing");
+        } else {
+          solutionsArea.classList.add("showing");
+        }
       } else {
-        solutionsArea.classList.add("showing");
+        let solutionsItems = solutions.querySelectorAll(".solution");
+        solutionsAreaCounterMobile++;
+        if (solutionsAreaCounterMobile >= 3) {
+          solutionsAreaCounterMobile = 0;
+        }
+        console.log(solutions.clientWidth);
+        for (let solution of solutionsItems) {
+          solution.style.transform = `translateX(${
+            solutionsAreaCounterMobile * (solutions.clientWidth * 0.53)
+          }px)`;
+        }
       }
     });
 
@@ -112,20 +206,48 @@ function loadHome() {
       let tutorialsDiv = document.getElementById("tutorials");
       let button = document.getElementById("tutorials-show-more-toggle");
 
-      if (tutorialsArea.classList.contains("showing")) {
-        if (tutorialsDiv.classList.contains("showing")) {
-          setTimeout(() => {
-            tutorialsArea.classList.remove("showing");
-          }, 1000);
+      let clientWidth =
+        document.documentElement.clientWidth || document.body.clientWidth;
 
-          tutorialsDiv.classList.remove("showing");
-          button.classList.remove("showing");
-          button.innerHTML = "Ver mais";
+      if (clientWidth > 768) {
+        if (tutorialsArea.classList.contains("showing")) {
+          if (tutorialsDiv.classList.contains("showing")) {
+            setTimeout(() => {
+              tutorialsArea.classList.remove("showing");
+            }, 1000);
+
+            tutorialsDiv.classList.remove("showing");
+            button.classList.remove("showing");
+            button.innerHTML = "Ver mais";
+          } else {
+            tutorialsArea.classList.remove("showing");
+          }
         } else {
-          tutorialsArea.classList.remove("showing");
+          tutorialsArea.classList.add("showing");
         }
       } else {
-        tutorialsArea.classList.add("showing");
+        let rows = tutorialsDiv.querySelectorAll(".wrapper .row");
+        let tutorialsVideoCount = 0;
+        let tutorials = [];
+        for (let row of rows) {
+          let tuts = row.querySelectorAll(".tutorial");
+
+          tuts.forEach((t) => {
+            tutorials.push(t);
+          });
+          tutorialsVideoCount += tuts.length;
+        }
+
+        tutorialsAreaCounterMobile++;
+        if (tutorialsAreaCounterMobile >= tutorialsVideoCount) {
+          tutorialsAreaCounterMobile = 0;
+        }
+
+        tutorials.forEach((t) => {
+          t.style.transform = `translateX(-${
+            tutorialsAreaCounterMobile * tutorials[0].clientWidth
+          }px)`;
+        });
       }
     });
 
@@ -156,11 +278,28 @@ function loadHome() {
     tutorials[i]
       .querySelector(".box >.wrapper >.play >img")
       .addEventListener("click", () => {
-        if (
-          document
-            .getElementById("tutorials-area")
-            .classList.contains("showing")
-        ) {
+        let clientWidth =
+          document.documentElement.clientWidth || document.body.clientWidth;
+
+        if (clientWidth > 768) {
+          if (
+            document
+              .getElementById("tutorials-area")
+              .classList.contains("showing")
+          ) {
+            let video = tutorials[i]
+              .querySelector(".box")
+              .children.namedItem("video");
+            if (tutorials[i].classList.contains("playing")) {
+              video.pause();
+
+              tutorials[i].classList.remove("playing");
+            } else {
+              tutorials[i].classList.add("playing");
+              video.play();
+            }
+          }
+        } else {
           let video = tutorials[i]
             .querySelector(".box")
             .children.namedItem("video");
@@ -179,26 +318,45 @@ function loadHome() {
   //fullscreen
   for (let i = 0; i < tutorials.length; i++) {
     tutorials[i].querySelector(".fullscreen").addEventListener("click", () => {
-      if (
-        document.getElementById("tutorials-area").classList.contains("showing")
-      ) {
+      let clientWidth =
+        document.documentElement.clientWidth || document.body.clientWidth;
+
+      console.log();
+
+      if (clientWidth > 768) {
+        if (
+          document
+            .getElementById("tutorials-area")
+            .classList.contains("showing")
+        ) {
+          let box = tutorials[i].querySelector(".box");
+          if (tutorials[i].classList.contains("fullscreen")) {
+            // box.style.height = null;
+            document.exitFullscreen();
+            tutorials[i].classList.remove("fullscreen");
+          } else {
+            // var elementTransition = box.style.transition;
+            // box.style.transition = "";
+
+            // requestAnimationFrame(function () {
+            //   box.style.height = 0 + "px";
+            //   box.style.transition = elementTransition;
+
+            //   requestAnimationFrame(function () {
+            //     box.style.height = window.screen.height + "px";
+            //   });
+            // });
+            box.requestFullscreen();
+            tutorials[i].classList.add("fullscreen");
+          }
+        }
+      } else {
         let box = tutorials[i].querySelector(".box");
         if (tutorials[i].classList.contains("fullscreen")) {
-          box.style.height = null;
-
+          document.exitFullscreen();
           tutorials[i].classList.remove("fullscreen");
         } else {
-          var elementTransition = box.style.transition;
-          box.style.transition = "";
-
-          requestAnimationFrame(function () {
-            box.style.height = 0 + "px";
-            box.style.transition = elementTransition;
-
-            requestAnimationFrame(function () {
-              box.style.height = window.innerHeight + "px";
-            });
-          });
+          box.requestFullscreen();
           tutorials[i].classList.add("fullscreen");
         }
       }
@@ -263,7 +421,6 @@ function loadTutorials() {
       }
     }
 
-
     document.getElementById("tutorials-slide-counter").innerHTML = `${
       pos + 1
     } / ${slide_counter}`;
@@ -308,23 +465,52 @@ function loadTutorials() {
     tutorials[i].querySelector(".fullscreen").addEventListener("click", () => {
       let box = tutorials[i].querySelector(".box");
       if (tutorials[i].classList.contains("fullscreen")) {
-        box.style.height = null;
-
+        document.exitFullscreen();
         tutorials[i].classList.remove("fullscreen");
       } else {
-        var elementTransition = box.style.transition;
-        box.style.transition = "";
-
-        requestAnimationFrame(function () {
-          box.style.height = 0 + "px";
-          box.style.transition = elementTransition;
-
-          requestAnimationFrame(function () {
-            box.style.height = window.innerHeight + "px";
-          });
-        });
+        box.requestFullscreen();
         tutorials[i].classList.add("fullscreen");
       }
     });
   }
+}
+
+function loadShowOnScroll() {
+  var scroll =
+    window.requestAnimationFrame ||
+    function (callback) {
+      window.setTimeout(callback, 1000 / 60);
+    };
+
+  var elementsToShow = document.querySelectorAll(".show-on-scroll");
+
+  function isElementInViewport(el) {
+    // special bonus for those using jQuery
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+      el = el[0];
+    }
+    var rect = el.getBoundingClientRect();
+    return (
+      (rect.top <= 0 && rect.bottom >= 0) ||
+      (rect.bottom >=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.top <=
+          (window.innerHeight || document.documentElement.clientHeight)) ||
+      (rect.top >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight))
+    );
+  }
+
+  function loop() {
+    elementsToShow.forEach(function (element) {
+      if (isElementInViewport(element)) {
+        element.classList.add("is-visible");
+      }
+    });
+
+    scroll(loop);
+  }
+
+  loop();
 }
