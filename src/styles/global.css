@@ -601,6 +601,12 @@ header > .main > .wrapper > .content {
   pointer-events: all;
 }
 
+.tutorial .box > .wrapper .tutorial-controls {
+  display: none;
+  padding: 0px 32px;
+  box-sizing: border-box;
+}
+
 .tutorial .box > .wrapper .tutorial-content {
   flex: 0;
   height: 100%;
@@ -644,15 +650,20 @@ header > .main > .wrapper > .content {
   transition: opacity 1s ease;
 }
 
-.tutorial.playing .box:hover > .wrapper,
-.tutorial.playing .box:hover > .fullscreen {
+.tutorial.playing[data-controls="true"] .box > .wrapper,
+.tutorial.playing[data-controls="true"] .box > .fullscreen {
   opacity: 1;
   transition: opacity 1s ease;
 }
 
-.tutorial.playing .box:hover > .overlay {
+.tutorial.playing[data-controls="true"] .box > .overlay {
   opacity: 0.75;
   transition: opacity 1s ease;
+}
+
+.tutorial.playing .box > .wrapper .play img {
+  content: url("../images/icons/play/pause.svg");
+  width: 80px;
 }
 
 /* TUTORIAL FULLSCREEN */
@@ -693,6 +704,86 @@ header > .main > .wrapper > .content {
   min-height: auto;
   min-width: auto;
   object-fit: contain;
+}
+
+.tutorial.fullscreen .box > .wrapper .tutorial-content {
+  margin: 0px 32px;
+}
+
+.tutorial.fullscreen .box > .wrapper .tutorial-controls {
+  display: block;
+}
+
+.tutorial.fullscreen .box > .wrapper .tutorial-controls > .timer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tutorial.fullscreen .box > .wrapper .tutorial-controls > .timer h6 {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #ffffff;
+}
+
+.tutorial.fullscreen .box > .wrapper .tutorial-controls > .progress {
+  display: flex;
+  align-items: center;
+  height: 22px;
+
+  pointer-events: all;
+}
+
+.tutorial.fullscreen .box > .wrapper .tutorial-controls > .progress progress {
+  width: 100%;
+  height: 1px;
+  background-color: #e1e1e1;
+}
+
+.tutorial.fullscreen
+  .box
+  > .wrapper
+  .tutorial-controls
+  > .progress
+  progress[value]::-webkit-progress-value {
+  background: #eb0029;
+  position: relative;
+
+  overflow: visible;
+}
+
+.tutorial.fullscreen .box > .wrapper .tutorial-controls > .progress .indicator {
+  position: absolute;
+  left: 25px;
+  width: 25px;
+  height: 25px;
+  background: #eb0029;
+
+  border-radius: 50%;
+}
+
+.tutorial.fullscreen .box > .wrapper .tutorial-controls > .controls {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 24px 0px;
+}
+
+.tutorial.fullscreen .box > .wrapper .tutorial-controls > .controls > * {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.tutorial.fullscreen
+  .box
+  > .wrapper
+  .tutorial-controls
+  > .controls
+  > :not(:first-child) {
+  margin-left: 24px;
 }
 
 /* .tutorial.fullscreen .box > .overlay,
@@ -1063,7 +1154,7 @@ footer > .footer .social > :not(:first-child) {
     height: 82px;
     overflow: hidden;
 
-    transition: height 1s ease;
+    /* transition: height 1s ease; */
   }
 
   #sidebar > .bar {
@@ -1074,7 +1165,6 @@ footer > .footer .social > :not(:first-child) {
     background: transparent;
   }
 
-  
   #sidebar #sidebar-menu-open {
     content: url("../images/icons/menu/menu_red.svg");
   }
@@ -1100,8 +1190,12 @@ footer > .footer .social > :not(:first-child) {
   }
 
   /*SIDEBAR CONTENT*/
+  #sidebar > .content {
+  }
+
   #sidebar > .content .wrapper {
     margin-left: 54px;
+    height: 667px;
   }
 
   #sidebar > .content .wrapper > .header {
@@ -1280,6 +1374,10 @@ footer > .footer .social > :not(:first-child) {
     min-height: 266px;
   }
 
+  .tutorial.playing .box > .wrapper .play img {
+    width: 40px;
+  }
+
   /* FOOTER */
   /* CONTACTS US FORM */
   footer > .contact-us-form {
@@ -1382,7 +1480,6 @@ footer > .footer .social > :not(:first-child) {
   footer > .footer .social {
     width: calc(100% - 32px);
     justify-content: center;
-
   }
 
   /* FORM */
@@ -1395,8 +1492,6 @@ footer > .footer .social > :not(:first-child) {
     margin-left: 0;
     margin-top: 16px;
   }
-
-
 
   header > .main > .wrapper > .content {
     margin: 0px 32px 0px 32px;

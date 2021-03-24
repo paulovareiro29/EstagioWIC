@@ -129,5 +129,6 @@ header > .main > .wrapper > .content > .info-text::-webkit-scrollbar-thumb {
   header > .main > .wrapper > .content .info-text{
     margin-top: 40px;
     padding-right: 50px;
+    max-height: none;
   }
 }

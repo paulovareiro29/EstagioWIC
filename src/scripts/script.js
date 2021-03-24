@@ -1,7 +1,14 @@
+let tutorialsIntervals = [];
+
+const scale = (num, in_min, in_max, out_min, out_max) => {
+  return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+};
+
 loadSidebar();
 loadSelects();
 loadShowOnScroll();
-initMap();
+loadTutorialVideos();
+// initMap();
 
 function initMap() {
   // The location of wic
@@ -37,53 +44,6 @@ function loadHome() {
     // focus  : 'center',
     // arrows: false,
   }).mount();
-
-  //   /* NEWS CARROSSEL*/
-  //   let news_counter = document.getElementById("news-carrossel").childElementCount - 1; //menos o slider
-  //   let newsPos = 0;
-  //   let newsList = document.getElementById("news-carrossel").querySelectorAll(".slide")
-
-  //   function updateNewsSlideCounter(direction = true){
-
-  //     if (direction) {
-  //       newsPos++;
-  //       if (newsPos >= news_counter) {
-  //         newsPos = 0;
-  //       }
-  //     } else {
-  //       newsPos--;
-  //       if (newsPos < 0) {
-  //         newsPos = news_counter - 1;
-  //       }
-  //     }
-
-  //     for(let news of newsList){
-  //       news.classList.remove("partial-hidden")
-  //       news.classList.add("hidden")
-  //     }
-
-  //     for(let i = 0; i < 3; i++){
-
-  //       let number = newsPos + i
-  //       if(number >= newsList.length){
-  //         number -= newsList.length
-  //       }
-
-  //       newsList[number].classList.remove("hidden")
-  //     }
-  //   }
-
-  //  document
-  //     .getElementById("landing-news-slide-left")
-  //     .addEventListener("click", () => {
-  //       updateNewsSlideCounter(false);
-  //     });
-
-  //   document
-  //     .getElementById("landing-news-slide-right")
-  //     .addEventListener("click", () => {
-  //       updateNewsSlideCounter(true);
-  //     });
 
   //BACKGROUND CARROSSEL
   function updateBackgroundSlideCounter(direction = true) {
@@ -269,99 +229,6 @@ function loadHome() {
         }
       }
     });
-
-  //tutorial
-  let tutorials = document.getElementsByClassName("tutorial");
-
-  //playing video
-  for (let i = 0; i < tutorials.length; i++) {
-    tutorials[i]
-      .querySelector(".box >.wrapper >.play >img")
-      .addEventListener("click", () => {
-        let clientWidth =
-          document.documentElement.clientWidth || document.body.clientWidth;
-
-        if (clientWidth > 768) {
-          if (
-            document
-              .getElementById("tutorials-area")
-              .classList.contains("showing")
-          ) {
-            let video = tutorials[i]
-              .querySelector(".box")
-              .children.namedItem("video");
-            if (tutorials[i].classList.contains("playing")) {
-              video.pause();
-
-              tutorials[i].classList.remove("playing");
-            } else {
-              tutorials[i].classList.add("playing");
-              video.play();
-            }
-          }
-        } else {
-          let video = tutorials[i]
-            .querySelector(".box")
-            .children.namedItem("video");
-          if (tutorials[i].classList.contains("playing")) {
-            video.pause();
-
-            tutorials[i].classList.remove("playing");
-          } else {
-            tutorials[i].classList.add("playing");
-            video.play();
-          }
-        }
-      });
-  }
-
-  //fullscreen
-  for (let i = 0; i < tutorials.length; i++) {
-    tutorials[i].querySelector(".fullscreen").addEventListener("click", () => {
-      let clientWidth =
-        document.documentElement.clientWidth || document.body.clientWidth;
-
-      console.log();
-
-      if (clientWidth > 768) {
-        if (
-          document
-            .getElementById("tutorials-area")
-            .classList.contains("showing")
-        ) {
-          let box = tutorials[i].querySelector(".box");
-          if (tutorials[i].classList.contains("fullscreen")) {
-            // box.style.height = null;
-            document.exitFullscreen();
-            tutorials[i].classList.remove("fullscreen");
-          } else {
-            // var elementTransition = box.style.transition;
-            // box.style.transition = "";
-
-            // requestAnimationFrame(function () {
-            //   box.style.height = 0 + "px";
-            //   box.style.transition = elementTransition;
-
-            //   requestAnimationFrame(function () {
-            //     box.style.height = window.screen.height + "px";
-            //   });
-            // });
-            box.requestFullscreen();
-            tutorials[i].classList.add("fullscreen");
-          }
-        }
-      } else {
-        let box = tutorials[i].querySelector(".box");
-        if (tutorials[i].classList.contains("fullscreen")) {
-          document.exitFullscreen();
-          tutorials[i].classList.remove("fullscreen");
-        } else {
-          box.requestFullscreen();
-          tutorials[i].classList.add("fullscreen");
-        }
-      }
-    });
-  }
 }
 
 function loadSidebar() {
@@ -437,42 +304,6 @@ function loadTutorials() {
     .addEventListener("click", () => {
       changeTutorialPage(true);
     });
-
-  //tutorial
-  let tutorials = document.getElementsByClassName("tutorial");
-
-  //playing video
-  for (let i = 0; i < tutorials.length; i++) {
-    tutorials[i]
-      .querySelector(".box >.wrapper >.play >img")
-      .addEventListener("click", () => {
-        let video = tutorials[i]
-          .querySelector(".box")
-          .children.namedItem("video");
-        if (tutorials[i].classList.contains("playing")) {
-          video.pause();
-
-          tutorials[i].classList.remove("playing");
-        } else {
-          tutorials[i].classList.add("playing");
-          video.play();
-        }
-      });
-  }
-
-  //fullscreen
-  for (let i = 0; i < tutorials.length; i++) {
-    tutorials[i].querySelector(".fullscreen").addEventListener("click", () => {
-      let box = tutorials[i].querySelector(".box");
-      if (tutorials[i].classList.contains("fullscreen")) {
-        document.exitFullscreen();
-        tutorials[i].classList.remove("fullscreen");
-      } else {
-        box.requestFullscreen();
-        tutorials[i].classList.add("fullscreen");
-      }
-    });
-  }
 }
 
 function loadShowOnScroll() {
@@ -513,4 +344,179 @@ function loadShowOnScroll() {
   }
 
   loop();
+}
+
+function updateTutorialProgressBar(tutorial, progress) {
+  let progressBar = tutorial.querySelector("progress");
+  let progressIndicator = tutorial.querySelector(".progress .indicator");
+
+  progressBar.value = progress;
+  progressIndicator.style.left =
+    scale(
+      progressBar.value,
+      0,
+      100,
+      25,
+      progressBar.getBoundingClientRect().width
+    ) + "px";
+}
+
+function tutorialTogglePlay(tutorial) {
+  let video = tutorial.querySelector(".box").children.namedItem("video");
+
+  if (tutorial.classList.contains("playing")) {
+    video.pause();
+    window.clearInterval(tutorialsIntervals[tutorial.getAttribute("data-id")]);
+    tutorial.classList.remove("playing");
+  } else {
+    video.play();
+
+    tutorialsIntervals[tutorial.getAttribute("data-id")] = setInterval(() => {
+      let progressBar = tutorial.querySelector("progress");
+      let progressIndicator = tutorial.querySelector(".progress .indicator");
+
+      if (!video.ended) {
+        updateTutorialProgressBar(
+          tutorial,
+          parseInt((video.currentTime * 100) / video.duration)
+        );
+      }
+    }, 500);
+
+    tutorial.classList.add("playing");
+  }
+}
+
+function tutorialToggleFullscreen(tutorial) {
+  let box = tutorial.querySelector(".box");
+  if (tutorial.classList.contains("fullscreen")) {
+    document.exitFullscreen();
+    tutorial.classList.remove("fullscreen");
+  } else {
+    box.requestFullscreen();
+    tutorial.classList.add("fullscreen");
+  }
+}
+
+function loadTutorialVideos() {
+  let tutorials = document.getElementsByClassName("tutorial");
+
+  for (let i = 0; i < tutorials.length; i++) {
+    let tutorial = tutorials[i];
+    let video = tutorial.querySelector(".box video");
+    let timeout;
+
+    tutorial.setAttribute("data-id", i);
+
+    //video timer
+    video.addEventListener("loadedmetadata", () => {
+      let minutes = Math.floor(video.duration / 60);
+      let seconds = Math.floor((video.duration / 60 - minutes) * 60);
+
+      tutorial.querySelector(".timer h6").innerHTML = minutes + ":" + seconds;
+    });
+
+    //mouse hover
+    tutorial.addEventListener("mousemove", function () {
+      let clientWidth =
+        document.documentElement.clientWidth || document.body.clientWidth;
+
+      if (clientWidth > 768) {
+        if (timeout) {
+          tutorial.setAttribute("data-controls", "true");
+          clearTimeout(timeout);
+        }
+        timeout = setTimeout(() => {
+          tutorial.setAttribute("data-controls", "false");
+        }, 1000);
+      }
+    });
+
+    //play pause
+    tutorial
+      .querySelector(".box >.wrapper >.play >img")
+      .addEventListener("click", () => {
+        tutorialTogglePlay(tutorial);
+      });
+
+    //fullscreen
+    tutorial.querySelectorAll(".fullscreen").forEach((button) => {
+      button.addEventListener("click", () => {
+        tutorialToggleFullscreen(tutorial);
+      });
+    });
+
+    tutorial.querySelector(".box").addEventListener("fullscreenchange", () => {
+      if( !document.fullscreenElement && tutorial.classList.contains("fullscreen") ){
+        tutorial.classList.remove("fullscreen")
+      }
+    })
+
+    //overlay when playing
+    tutorial.addEventListener("mouseover", () => {
+      let clientWidth =
+        document.documentElement.clientWidth || document.body.clientWidth;
+
+      if (clientWidth > 768) {
+        tutorial.setAttribute("data-controls", "true");
+      }
+    });
+
+    tutorial.addEventListener("mouseout", () => {
+      let clientWidth =
+        document.documentElement.clientWidth || document.body.clientWidth;
+
+      if (clientWidth > 768) {
+        tutorial.setAttribute("data-controls", "false");
+      }
+    });
+
+    tutorial.addEventListener("click", () => {
+      let clientWidth =
+        document.documentElement.clientWidth || document.body.clientWidth;
+      if (clientWidth <= 768) {
+        if (tutorial.getAttribute("data-controls") == "true") {
+          tutorial.setAttribute("data-controls", "false");
+        } else {
+          tutorial.setAttribute("data-controls", "true");
+        }
+      }
+    });
+
+    //audio
+    tutorial.querySelector(".lower_sound").addEventListener("click", () => {
+      let currentVolume = video.volume.toFixed(1);
+
+      if (currentVolume > 0) {
+        video.volume -= 0.1;
+      }
+    });
+
+    tutorial.querySelector(".higher_sound").addEventListener("click", () => {
+      let currentVolume = video.volume.toFixed(1);
+
+      if (currentVolume < 1) {
+        video.volume += 0.1;
+      }
+    });
+
+    //progress change on bar click
+    tutorial.querySelector(".progress").addEventListener("click", (e) => {
+      let progressBar = tutorial.querySelector("progress");
+      video.currentTime = scale(
+        e.pageX,
+        32,
+        progressBar.getBoundingClientRect().width + 32,
+        0,
+        video.duration
+      );
+
+      updateTutorialProgressBar(
+        tutorial,
+        parseInt((video.currentTime * 100) / video.duration)
+      );
+    });
+
+
+  }
 }
