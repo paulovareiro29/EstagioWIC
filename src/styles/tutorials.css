@@ -73,19 +73,49 @@ main > .tutorials-area {
 }
 
 /* INDEX 2.1 */
-main > .tutorials-area .options {
+#tutorials-area > .options {
   display: flex;
   justify-content: flex-end;
-
-  box-sizing: border-box;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
 }
 
 #tutorials-area > .options .filter {
+  position: relative;
   display: flex;
+
+  width: 48px;
+  background: #eb0029;
+
+  border-radius: 48px;
+  transition: width 0.3s ease-in-out;
+
+  overflow: hidden;
+}
+
+#tutorials-area > .options .filter:focus-within {
+  width: 406px;
+}
+
+#tutorials-area > .options .filter:focus-within button {
+  pointer-events: all;
+}
+
+#tutorials-area > .options .filter select {
+  background: #eb0029;
+  color: white;
+  border: none;
+  outline: none;
+  width: 406px;
+}
+
+#tutorials-area > .options .filter select + label {
+  color: white;
 }
 
 #tutorials-area > .options .filter button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
   cursor: pointer;
 
   min-width: 48px;
@@ -99,6 +129,8 @@ main > .tutorials-area .options {
   align-items: center;
 
   border: none;
+
+  pointer-events: none;
 }
 
 #tutorials-area > .options .search {
@@ -252,8 +284,12 @@ main > .tutorials-area .options {
     width: 247px;
   }
 
-  #tutorials-area > .options .filter .input-group {
-    display: none;
+  #tutorials-area > .options .filter .input-group select{
+    max-width: 200px;
+  }
+
+  #tutorials-area > .options .filter:focus-within {
+    width: 200px;
   }
 
   #tutorials-area > .options .filter button[type="submit"] {

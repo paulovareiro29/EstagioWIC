@@ -1,24 +1,4 @@
-/*  HOMEPAGE
-        1 - Header (landing)
-          1.1 - Sidebar
-            1.1.1 - Sidebar open
-          1.2 - Main Content
-              1.2.1 - Header
-              1.2.2 - Content
-              1.2.3 - Footer
-        2 - Solutions area
-          2.1 - Solutions area showing
-          2.2 - Animations
-        3 - Contact Us
-          3.1 - Background
-          3.2 - Content
-        4 - Tutorials area
-          4.1 - Options
-          4.2 - Content
-          4.3 - Tutorials
-          4.4 - Tutorials area showing
-          4.5 - Slider 
-*/
+
 
 /* SIDEBAR */
 
@@ -173,13 +153,97 @@ header > .main > .background .video > .overlay {
   transition: opacity 0.3s ease;
 }
 
+/* FLOATING BUTTON */
+.floating-contacts {
+  position: fixed;
+  right: 60px;
+  bottom: 80px;
+  z-index: 9999;
+}
+
+.floating-contacts .floating-contacts__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  background-color: #eb0029;
+  border-radius: 50%;
+
+  right: 20px;
+  bottom: 50%;
+  transform: translateY(50%);
+
+  width: 80px;
+  height: 80px;
+}
+
+/* .floating-contacts .floating-contacts__icon::after {
+  content: "";
+  position: absolute;
+
+  border-radius: 50%;
+  border: 20px solid rgb(255, 255, 255, 0.25);
+  height: 80px;
+  width: 80px;
+} */
+
+.floating-contacts .floating-contacts__info {
+  display: flex;
+  align-items: center;
+
+  width: 120px;
+  height: 120px;
+  border-radius: 120px;
+  overflow: hidden;
+
+  background: rgb(255, 255, 255, 0.25);
+
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-contacts .floating-contacts__info .floating-contacts__info__wrapper {
+  display: flex;
+  width: calc(100% - 176px);
+  justify-content: space-between;
+  padding-left: 56px;
+}
+
+.floating-contacts .floating-contacts__info .floating-contacts__info__item {
+  display: none;
+  align-items: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.floating-contacts .floating-contacts__info .floating-contacts__info__item img {
+  width: 32px;
+}
+
+.floating-contacts
+  .floating-contacts__info
+  .floating-contacts__info__item
+  > :not(:first-child) {
+  margin-left: 8px;
+}
+
+.floating-contacts .floating-contacts__icon:hover + .floating-contacts__info,
+.floating-contacts .floating-contacts__info:hover {
+  width: 400px;
+  background: white;
+}
+
+.floating-contacts
+  .floating-contacts__icon:hover
+  + .floating-contacts__info
+  .floating-contacts__info__item,
+.floating-contacts
+  .floating-contacts__info:hover
+  .floating-contacts__info__item {
+  display: flex;
+}
+
 /* INDEX 1.2.1*/
-
-header > .main > .wrapper {
-}
-
-header > .main > .wrapper > .header {
-}
 
 header > .main > .wrapper > .header .nav a {
   color: white;
@@ -296,10 +360,6 @@ header
   > .slide.partial-hidden
   .arrow {
   display: none;
-}
-
-#news-carrossel .splide__slide {
-  /* max-width: 210px; */
 }
 
 #news-carrossel .splide__arrows button {
@@ -462,6 +522,7 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 
   min-height: 400px;
   transition: 1s ease;
+  
   /*max-width: 328px;
   min-width: 328px;*/
 }
@@ -483,7 +544,7 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
   flex-direction: column;
   padding: 32px;
   box-sizing: border-box;
-  height: 100%;
+  height: 400px;
 }
 
 #solutions-area > .wrapper > .solutions .solution > .wrapper > .logo {
@@ -827,10 +888,42 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 /* TUTORIALS AREA OPTIONS */
 
 #tutorials-area > .options .filter {
+  position: relative;
   display: flex;
+
+  width: 48px;
+  background: #eb0029;
+
+  border-radius: 48px;
+  transition: width 0.3s ease-in-out;
+
+  overflow: hidden;
+}
+
+#tutorials-area > .options .filter:focus-within {
+  width: 406px;
+}
+
+#tutorials-area > .options .filter:focus-within button {
+  pointer-events: all;
+}
+
+#tutorials-area > .options .filter select {
+  background: #eb0029;
+  color: white;
+  border: none;
+  outline: none;
+  width: 406px;
+}
+
+#tutorials-area > .options .filter select + label {
+  color: white;
 }
 
 #tutorials-area > .options .filter button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
   cursor: pointer;
 
   min-width: 48px;
@@ -844,6 +937,8 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
   align-items: center;
 
   border: none;
+
+  pointer-events: none;
 }
 
 #tutorials-area > .options .search {
@@ -1435,8 +1530,12 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
     z-index: 50;
   }
 
-  #tutorials-area > .options .filter .input-group {
-    display: none;
+  #tutorials-area > .options .filter .input-group select{
+    max-width: 200px;
+  }
+
+  #tutorials-area > .options .filter:focus-within {
+    width: 200px;
   }
 
   #tutorials-area > .options .filter button {
@@ -1551,5 +1650,48 @@ header > .main > .wrapper > .footer .slide-wrapper > .slide.partial-hidden h6 {
 
   #tutorials-area > .main > .tutorials > .wrapper > :not(:first-child) {
     overflow: visible;
+  }
+
+  .floating-contacts {
+    right: 20px;
+    bottom: 30px;
+  }
+
+  .floating-contacts .floating-contacts__icon {
+    width: 60px;
+    height: 60px;
+    right: 10px;
+  }
+  .floating-contacts .floating-contacts__info {
+    width: 80px;
+    height: 80px;
+  }
+
+  .floating-contacts
+    .floating-contacts__info
+    .floating-contacts__info__wrapper {
+    width: calc(100% - 108px);
+    padding-left: 28px;
+  }
+
+  .floating-contacts .floating-contacts__info .floating-contacts__info__item {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .floating-contacts
+    .floating-contacts__info
+    .floating-contacts__info__item
+    img {
+    width: 24px;
+  }
+
+  .floating-contacts .floating-contacts__icon:hover + .floating-contacts__info,
+  .floating-contacts .floating-contacts__info:hover {
+    width: 300px;
+    background: white;
   }
 }

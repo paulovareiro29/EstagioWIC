@@ -540,7 +540,7 @@ header > .main > .wrapper > .content {
   background-color: #000000;
 }
 
-.tutorial .box > .background {
+/* .tutorial .box > .background {
   position: absolute;
   top: 0;
   left: 0;
@@ -549,10 +549,10 @@ header > .main > .wrapper > .content {
   max-height: 100%;
   max-width: 100%;
   object-fit: cover;
-  /* z-index: 1; */
+
 
   transition: opacity 1s ease;
-}
+} */
 
 .tutorial .box > .overlay {
   position: absolute;
@@ -599,6 +599,14 @@ header > .main > .wrapper > .content {
 .tutorial .box > .wrapper .play img {
   cursor: pointer;
   pointer-events: all;
+}
+
+.tutorial .box > .wrapper .play img.play_btn {
+  margin: 0px 80px;
+}
+
+.tutorial .box > .wrapper .play img:not(.play_btn) {
+  display: none;
 }
 
 .tutorial .box > .wrapper .tutorial-controls {
@@ -661,9 +669,13 @@ header > .main > .wrapper > .content {
   transition: opacity 1s ease;
 }
 
-.tutorial.playing .box > .wrapper .play img {
+.tutorial.playing .box > .wrapper .play img.play_btn {
   content: url("../images/icons/play/pause.svg");
   width: 80px;
+}
+
+.tutorial.fullscreen .box > .wrapper .play img:not(.play_btn) {
+  display: inline;
 }
 
 /* TUTORIAL FULLSCREEN */
@@ -704,6 +716,14 @@ header > .main > .wrapper > .content {
   min-height: auto;
   min-width: auto;
   object-fit: contain;
+}
+
+.tutorial.fullscreen .box >.fullscreen{
+    content: url('../images/icons/play/x.svg');
+}
+
+.tutorial.fullscreen .box > .wrapper .play img.play_btn {
+  width: 120px;
 }
 
 .tutorial.fullscreen .box > .wrapper .tutorial-content {
@@ -775,6 +795,14 @@ header > .main > .wrapper > .content {
 .tutorial.fullscreen .box > .wrapper .tutorial-controls > .controls > * {
   cursor: pointer;
   pointer-events: all;
+}
+
+.tutorial.fullscreen
+  .box
+  > .wrapper
+  .tutorial-controls
+  .mute[data-sound="false"] {
+  content: url("../images/icons/play/sound.svg");
 }
 
 .tutorial.fullscreen
@@ -1345,9 +1373,17 @@ footer > .footer .social > :not(:first-child) {
     min-width: auto;
   }
 
-  .tutorial .box > .wrapper .play img {
+  .tutorial .box > .wrapper .play img.play_btn {
     width: 40px;
     margin-top: 62px;
+  }
+
+  .tutorial.fullscreen .box > .wrapper .play img:not(.play_btn) {
+    width: 40px;
+  }
+
+  .tutorial .box > .wrapper .play img.play_btn {
+    margin: 0px 40px;
   }
 
   .tutorial .box > .wrapper .tutorial-content {
@@ -1377,6 +1413,19 @@ footer > .footer .social > :not(:first-child) {
   .tutorial.playing .box > .wrapper .play img {
     width: 40px;
   }
+
+  .tutorial.fullscreen .box > .wrapper .play img.play_btn,
+  .tutorial.playing.fullscreen .box > .wrapper .play img.play_btn {
+    width: 80px;
+  }
+
+  .tutorial.playing .box > .wrapper .play img.play_btn {
+    width: 40px;
+  }
+
+  .tutorial.fullscreen .box >.fullscreen{
+    width: 40px;
+}
 
   /* FOOTER */
   /* CONTACTS US FORM */

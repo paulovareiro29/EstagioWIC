@@ -10,6 +10,14 @@ loadShowOnScroll();
 loadTutorialVideos();
 // initMap();
 
+function contactPhone() {
+  console.log("phone")
+}
+function contactEmail() {
+  console.log("email")
+}
+
+
 function initMap() {
   // The location of wic
   const wic = { lat: 41.693, lng: -8.826 };
@@ -221,7 +229,7 @@ function loadHome() {
 
       if (tutorialsArea.classList.contains("showing")) {
         if (tutorialsDiv.classList.contains("showing")) {
-          window.location.href = "#";
+          window.location.href = "tutorials.html";
         } else {
           tutorialsDiv.classList.add("showing");
           button.classList.add("showing");
@@ -434,10 +442,18 @@ function loadTutorialVideos() {
 
     //play pause
     tutorial
-      .querySelector(".box >.wrapper >.play >img")
+      .querySelector(".box >.wrapper >.play >img.play_btn")
       .addEventListener("click", () => {
         tutorialTogglePlay(tutorial);
       });
+
+    tutorial.querySelector(".box >.wrapper >.play >img.backward_btn").addEventListener("click", () => {
+      video.currentTime -= 15
+    })
+
+    tutorial.querySelector(".box >.wrapper >.play >img.forward_btn").addEventListener("click", () => {
+      video.currentTime += 15
+    })
 
     //fullscreen
     tutorial.querySelectorAll(".fullscreen").forEach((button) => {
@@ -484,20 +500,18 @@ function loadTutorialVideos() {
     });
 
     //audio
-    tutorial.querySelector(".lower_sound").addEventListener("click", () => {
-      let currentVolume = video.volume.toFixed(1);
+    tutorial.querySelector(".mute").addEventListener("click", (e) => {
 
-      if (currentVolume > 0) {
-        video.volume -= 0.1;
+      let element = e.toElement
+
+      if(element.getAttribute("data-sound") == "true"){
+        element.setAttribute("data-sound", false)
+        video.volume = 0;
+      }else{
+        element.setAttribute("data-sound", true)
+        video.volume = 1;
       }
-    });
 
-    tutorial.querySelector(".higher_sound").addEventListener("click", () => {
-      let currentVolume = video.volume.toFixed(1);
-
-      if (currentVolume < 1) {
-        video.volume += 0.1;
-      }
     });
 
     //progress change on bar click
